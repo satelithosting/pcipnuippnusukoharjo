@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal Resmi Pimpinan Cabang Ikatan Pelajar Nahdlatul Ulama (IPNU) dan Ikatan Pelajar Putri Nahdlatul Ulama (IPPNU) Kabupaten Sukoharjo — Belajar, Berjuang, Bertaqwa.">
+    <meta name="theme-color" content="#064e3b">
+    <title>PC IPNU IPPNU Kabupaten Sukoharjo — Portal Resmi Pelajar NU</title>
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome 6 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Konfigurasi Palet Hijau Tua NU & Aksen Emas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif']
+                    },
+                    colors: {
+                        nu: {
+                            950: '#022c22',
+                            900: '#064e3b',
+                            800: '#065f46',
+                            700: '#047857',
+                            600: '#059669',
+                            500: '#10b981',
+                            100: '#d1fae5',
+                            50:  '#ecfdf5'
+                        },
+                        gold: {
+                            700: '#b45309',
+                            600: '#d97706',
+                            500: '#f59e0b',
+                            400: '#fbbf24',
+                            100: '#fef3c7',
+                            50:  '#fffbeb'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Latar Hero dengan Gradien Hijau Tua NU & Aksen Emas */
+        .hero-nu-bg {
+            background: linear-gradient(135deg, #022c22 0%, #064e3b 50%, #047857 100%);
+            background-image:
+                radial-gradient(circle at 18% 22%, rgba(245, 158, 11, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 86% 78%, rgba(16, 185, 129, 0.24) 0%, transparent 48%),
+                linear-gradient(135deg, #022c22 0%, #064e3b 52%, #047857 100%);
+        }
+
+        .hero-pattern-overlay {
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+            background-size: 38px 38px;
+        }
+
+        /* Scrollbar halus untuk isi modal */
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-nu-900 selection:text-white">
+
+    <!-- =====================================================================
+         1. NAVBAR STICKY RESPONSIF
+    ====================================================================== -->
+    <header id="mainNavbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand & Logo -->
+                <a href="#beranda" class="flex items-center gap-3.5 group focus:outline-none">
+                    <div class="w-12 h-12 rounded-2xl bg-nu-50 border-2 border-nu-900/15 group-hover:border-gold-500 p-1 flex items-center justify-center shrink-0 shadow-sm transition-colors">
+                        <img
+                            id="navLogoImg"
+                            src="logo.png"
+                            alt="Logo PC IPNU IPPNU Sukoharjo"
+                            class="w-full h-full object-contain"
+                        >
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-extrabold text-base sm:text-lg text-nu-900 tracking-tight leading-tight">
+                            PC IPNU IPPNU
+                        </span>
+                        <span class="font-bold text-xs sm:text-sm text-gold-600 tracking-wide">
+                            Kabupaten Sukoharjo
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden lg:flex items-center gap-7" aria-label="Menu Utama">
+                    <a href="#beranda" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Beranda</a>
+                    <a href="#tentang" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Tentang</a>
+                    <a href="#program" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Program Kerja</a>
+                    <a href="#pusat-data" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Pusat Data</a>
+                    <a href="#portal-pac" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Portal 12 PAC</a>
+                    <a href="#berita" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Pers &amp; Berita</a>
+                    <a href="#kontak" class="text-sm font-semibold text-slate-600 hover:text-nu-800 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Tombol Aksi & Hamburger Mobile -->
+                <div class="flex items-center gap-2.5">
+                    <button
+                        type="button"
+                        data-action="open-write-article"
+                        class="hidden sm:inline-flex items-center gap-2 bg-nu-900 hover:bg-nu-700 text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-md shadow-nu-900/20 hover:shadow-lg transition-all"
+                    >
+                        <i class="fa-solid fa-pen-nib text-gold-400"></i>
+                        <span>Tulis Artikel</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        id="mobileMenuToggle"
+                        aria-label="Buka Menu Navigasi"
+                        aria-expanded="false"
+                        class="lg:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl border border-slate-200 text-slate-700 hover:bg-nu-50 hover:text-nu-900 transition-colors"
+                    >
+                        <i id="mobileMenuIcon" class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drawer Menu Mobile -->
+        <div id="mobileMenuPanel" class="hidden lg:hidden bg-white border-t border-slate-200 shadow-xl">
+            <div class="max-w-7xl mx-auto px-4 py-4 space-y-1">
+                <a href="#beranda" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-solid fa-house w-5 text-nu-700"></i> Beranda
+                </a>
+                <a href="#tentang" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-solid fa-building-columns w-5 text-nu-700"></i> Tentang Kami
+                </a>
+                <a href="#program" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-solid fa-layer-group w-5 text-nu-700"></i> Program Kerja
+                </a>
+                <a href="#pusat-data" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-brands fa-google-drive w-5 text-nu-700"></i> Pusat Data
+                </a>
+                <a href="#portal-pac" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-solid fa-sitemap w-5 text-nu-700"></i> Portal 12 PAC
+                </a>
+                <a href="#berita" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-solid fa-newspaper w-5 text-nu-700"></i> Pers &amp; Berita
+                </a>
+                <a href="#kontak" class="mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold text-slate-700 hover:bg-nu-50 hover:text-nu-900">
+                    <i class="fa-solid fa-address-book w-5 text-nu-700"></i> Kontak
+                </a>
+                <div class="pt-3 border-t border-slate-100">
+                    <button
+                        type="button"
+                        data-action="mobile-write-article"
+                        class="w-full flex items-center justify-center gap-2 bg-nu-900 hover:bg-nu-700 text-white text-sm font-bold py-3.5 px-5 rounded-xl shadow-md"
+                    >
+                        <i class="fa-solid fa-pen-nib text-gold-400"></i>
+                        <span>Tulis &amp; Kirim Artikel</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         2. HERO SECTION (Tanpa Kartu Statistik Angka)
+    ====================================================================== -->
+    <section id="beranda" class="hero-nu-bg relative text-white overflow-hidden">
+        <div class="hero-pattern-overlay py-16 sm:py-24 lg:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    <!-- Kolom Kiri: Sambutan Resmi & CTA -->
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-gold-400 text-xs sm:text-sm font-extrabold tracking-wider uppercase mb-6">
+                            <i class="fa-solid fa-star"></i>
+                            <span>Belajar &bull; Berjuang &bull; Bertaqwa</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-5xl lg:text-[3.35rem] font-extrabold leading-[1.15] tracking-tight mb-6">
+                            Pimpinan Cabang
+                            <span class="block text-gold-400 mt-1">IPNU IPPNU Kabupaten Sukoharjo</span>
+                        </h1>
+
+                        <p class="text-emerald-100/90 text-base sm:text-lg leading-relaxed max-w-2xl mb-9">
+                            Selamat datang di portal digital resmi Ikatan Pelajar Nahdlatul Ulama dan Ikatan Pelajar Putri Nahdlatul Ulama Kabupaten Sukoharjo — ruang konsolidasi kaderisasi, pusat arsip administrasi, serta media syiar pelajar santri Ahlussunnah wal Jama'ah An-Nahdliyah.
+                        </p>
+
+                        <!-- Tombol CTA Utama -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#program" class="inline-flex items-center justify-center gap-2.5 bg-gold-500 hover:bg-gold-600 text-nu-950 font-extrabold text-sm sm:text-base px-7 py-4 rounded-2xl shadow-lg shadow-gold-500/25 transition-all transform hover:-translate-y-0.5">
+                                <span>Jelajahi Program Kerja</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="#portal-pac" class="inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/25 font-bold text-sm sm:text-base px-7 py-4 rounded-2xl backdrop-blur-sm transition-all">
+                                <i class="fa-solid fa-sitemap text-gold-400"></i>
+                                <span>Portal 12 PAC</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Kartu Trilogi Pelajar NU -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                            <div class="flex items-center gap-4 pb-6 mb-6 border-b border-white/15">
+                                <div class="w-16 h-16 rounded-2xl bg-white p-1.5 shadow-md shrink-0">
+                                    <img
+                                        id="heroLogoImg"
+                                        src="logo.png"
+                                        alt="Emblem PC IPNU IPPNU Sukoharjo"
+                                        class="w-full h-full object-contain"
+                                    >
+                                </div>
+                                <div>
+                                    <span class="inline-block px-2.5 py-0.5 rounded-full bg-gold-500/20 text-gold-300 text-[11px] font-bold uppercase tracking-wider mb-1">
+                                        Trilogi Pelajar NU
+                                    </span>
+                                    <h2 class="font-extrabold text-lg sm:text-xl text-white leading-snug">
+                                        Pelajar NU Sukoharjo
+                                    </h2>
+                                    <p class="text-xs text-emerald-100/80">Ahlussunnah wal Jama'ah An-Nahdliyah</p>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4 p-4 rounded-2xl bg-nu-950/45 border border-white/10">
+                                    <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-book-open-reader"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white text-sm sm:text-base">Belajar</h3>
+                                        <p class="text-xs sm:text-sm text-emerald-100/80 mt-0.5 leading-relaxed">
+                                            Menumbuhkan tradisi intelektual, literasi digital, dan penguasaan keilmuan modern maupun pesantren.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 p-4 rounded-2xl bg-nu-950/45 border border-white/10">
+                                    <div class="w-10 h-10 rounded-xl bg-nu-500/25 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-hand-fist"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white text-sm sm:text-base">Berjuang</h3>
+                                        <p class="text-xs sm:text-sm text-emerald-100/80 mt-0.5 leading-relaxed">
+                                            Berkhidmat untuk kemajuan pelajar, masyarakat, dan keutuhan Negara Kesatuan Republik Indonesia.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-4 p-4 rounded-2xl bg-nu-950/45 border border-white/10">
+                                    <div class="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-mosque"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-bold text-white text-sm sm:text-base">Bertaqwa</h3>
+                                        <p class="text-xs sm:text-sm text-emerald-100/80 mt-0.5 leading-relaxed">
+                                            Membentuk pribadi pelajar yang berakhlakul karimah dan istiqamah mengamalkan ajaran Islam Aswaja.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         2B. TENTANG KAMI (PROFIL PC IPNU IPPNU KABUPATEN SUKOHARJO)
+    ====================================================================== -->
+    <section id="tentang" class="py-16 lg:py-20 bg-slate-50 border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7 space-y-5">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-nu-50 text-nu-900 border border-nu-200 text-xs font-extrabold uppercase tracking-wider">
+                        Tentang Kami
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 leading-tight">
+                        Wadah Pengkaderan Pelajar &amp; Santri Nahdlatul Ulama Sukoharjo
+                    </h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <strong>Pimpinan Cabang Ikatan Pelajar Nahdlatul Ulama (IPNU) dan Ikatan Pelajar Putri Nahdlatul Ulama (IPPNU) Kabupaten Sukoharjo</strong> merupakan badan otonom Nahdlatul Ulama yang menghimpun, membina, dan menggerakkan pelajar, santri, serta remaja di seluruh wilayah Kabupaten Sukoharjo.
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Melalui jaringan 12 Pimpinan Anak Cabang (PAC), pimpinan ranting desa/kelurahan, serta pimpinan komisariat sekolah, madrasah, dan pondok pesantren, kami berkomitmen mencetak generasi muda yang unggul secara intelektual, kokoh dalam ideologi Ahlussunnah wal Jama'ah An-Nahdliyah, serta adaptif terhadap perkembangan era digital.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-5 grid sm:grid-cols-2 lg:grid-cols-1 gap-4">
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-sm flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-nu-900 text-gold-400 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-compass text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900 text-sm sm:text-base">Visi Gerakan</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                                Terwujudnya pelajar Kabupaten Sukoharjo yang bertaqwa, berilmu, berakhlak mulia, dan berwawasan kebangsaan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-5 border border-slate-200/90 shadow-sm flex items-start gap-4">
+                        <div class="w-11 h-11 rounded-xl bg-gold-500 text-nu-950 flex items-center justify-center shrink-0">
+                            <i class="fa-solid fa-handshake-angle text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900 text-sm sm:text-base">Khidmat Organisasi</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed">
+                                Mengawal pengkaderan berjenjang, literasi digital pelajar, serta penguatan administrasi terpadu di tingkat cabang hingga komisariat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         3. PROGRAM KERJA DEPARTEMEN & LEMBAGA (9 KARTU INTERAKTIF + MODAL)
+    ====================================================================== -->
+    <section id="program" class="py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-block px-3.5 py-1 rounded-full bg-nu-50 text-nu-900 border border-nu-200 text-xs font-extrabold uppercase tracking-wider mb-3">
+                    Struktur &amp; Khidmat Gerakan
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">
+                    Program Kerja Departemen &amp; Lembaga
+                </h2>
+                <p class="text-slate-600 text-base leading-relaxed">
+                    Klik salah satu dari 9 departemen atau lembaga di bawah ini untuk melihat fokus gerak dan rincian program kerja PC IPNU IPPNU Kabupaten Sukoharjo.
+                </p>
+            </div>
+
+            <!-- Grid 9 Kartu Departemen & Lembaga -->
+            <div id="programGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Dirender secara dinamis -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         4. PUSAT DATA (GOOGLE DRIVE) & LOGIN DATABASE ANGGOTA
+    ====================================================================== -->
+    <section id="pusat-data" class="py-20 lg:py-24 bg-nu-900 text-white relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-500/15 blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+                <div class="max-w-2xl">
+                    <span class="text-gold-400 font-extrabold uppercase tracking-wider text-xs sm:text-sm block mb-2.5">
+                        Arsip &amp; Administrasi Terpadu
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                        Pusat Data &amp; Database Anggota
+                    </h2>
+                    <p class="text-emerald-100/85 text-base mt-3 leading-relaxed">
+                        Unduh pedoman administrasi, modul kaderisasi, peraturan organisasi, serta akses database kader se-Kabupaten Sukoharjo.
+                    </p>
+                </div>
+                <div class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-white/10 border border-white/15 text-xs font-bold text-emerald-100 self-start md:self-auto">
+                    <i class="fa-brands fa-google-drive text-gold-400 text-base"></i>
+                    <span>Terhubung ke Google Drive PC</span>
+                </div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Kartu 1: Surat Menyurat -->
+                <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-7 shadow-xl flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-envelope-open-text text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-slate-900 mb-2">Surat Menyurat</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Format surat resmi, kop surat cabang, template proposal kegiatan, dan panduan tata persuratan.
+                        </p>
+                    </div>
+                    <a
+                        id="gdriveSuratLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-100 hover:bg-nu-900 text-nu-900 hover:text-white font-bold text-sm transition-colors"
+                    >
+                        <span>Buka Folder Drive</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Kartu 2: Modul Kaderisasi -->
+                <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-7 shadow-xl flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-nu-800 flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-book-bookmark text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-slate-900 mb-2">Modul Kaderisasi</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Silabus materi MAKESTA, LAKMUD, buku panduan instruktur, dan bahan kajian Aswaja.
+                        </p>
+                    </div>
+                    <a
+                        id="gdriveModulLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-100 hover:bg-nu-900 text-nu-900 hover:text-white font-bold text-sm transition-colors"
+                    >
+                        <span>Buka Folder Drive</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Kartu 3: Peraturan Organisasi -->
+                <div class="bg-white text-slate-800 rounded-3xl p-6 sm:p-7 shadow-xl flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-amber-100 text-gold-600 flex items-center justify-center mb-5">
+                            <i class="fa-solid fa-scale-balanced text-xl"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-slate-900 mb-2">Peraturan Organisasi</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Dokumen PD/PRT, Peraturan Organisasi (PO), dan Pedoman Pelaksanaan Organisasi &amp; Administrasi.
+                        </p>
+                    </div>
+                    <a
+                        id="gdrivePeraturanLink"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-slate-100 hover:bg-nu-900 text-nu-900 hover:text-white font-bold text-sm transition-colors"
+                    >
+                        <span>Buka Folder Drive</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Kartu 4: Database Anggota (Terproteksi SHA-256 + XOR Cipher) -->
+                <div class="bg-gradient-to-br from-gold-50 to-white text-slate-800 rounded-3xl p-6 sm:p-7 shadow-xl border-2 border-gold-400 flex flex-col justify-between hover:-translate-y-1.5 transition-all duration-300">
+                    <div>
+                        <div class="flex items-center justify-between mb-5">
+                            <div class="w-12 h-12 rounded-2xl bg-nu-900 text-gold-400 flex items-center justify-center">
+                                <i class="fa-solid fa-database text-xl"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold-100 text-gold-700 text-xs font-extrabold">
+                                <i class="fa-solid fa-shield-halved text-[10px]"></i> Terenkripsi
+                            </span>
+                        </div>
+                        <h3 class="font-extrabold text-lg text-slate-900 mb-2">Database Anggota</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            Rekapitulasi data kader, alumni pengkaderan, dan struktur ranting/komisariat se-Sukoharjo.
+                        </p>
+                    </div>
+                    <button
+                        type="button"
+                        data-action="open-db-modal"
+                        class="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-nu-900 hover:bg-nu-700 text-white font-extrabold text-sm shadow-md transition-colors"
+                    >
+                        <span>Akses Database</span>
+                        <i class="fa-solid fa-key text-gold-400 text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         5. PORTAL 12 PAC SE-KABUPATEN SUKOHARJO
+    ====================================================================== -->
+    <section id="portal-pac" class="py-20 lg:py-24 bg-slate-50 border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-gold-50 text-gold-700 border border-gold-200 text-xs font-extrabold uppercase tracking-wider mb-3">
+                        Jaringan Pimpinan Anak Cabang
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+                        Portal 12 PAC Se-Kabupaten Sukoharjo
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Temukan dan kunjungi kanal resmi Pimpinan Anak Cabang IPNU IPPNU di 12 kecamatan wilayah Kabupaten Sukoharjo.
+                    </p>
+                </div>
+
+                <!-- Pencarian Cepat PAC -->
+                <div class="w-full lg:w-80">
+                    <label for="pacSearchInput" class="sr-only">Cari Kecamatan PAC</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input
+                            type="text"
+                            id="pacSearchInput"
+                            placeholder="Cari kecamatan (misal: Kartasura)..."
+                            class="w-full pl-11 pr-10 py-3 rounded-2xl bg-white border border-slate-200 text-sm text-slate-800 placeholder-slate-400 focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all shadow-sm"
+                        >
+                        <button
+                            type="button"
+                            id="pacClearBtn"
+                            data-action="clear-pac-search"
+                            aria-label="Hapus pencarian"
+                            class="hidden absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-slate-200 hover:bg-slate-300 text-slate-600 text-xs items-center justify-center"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid 12 Kartu PAC -->
+            <div id="pacGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <!-- Dirender secara dinamis -->
+            </div>
+
+            <!-- Empty State Pencarian PAC -->
+            <div id="pacEmptyState" class="hidden text-center py-12 px-4 bg-white rounded-3xl border border-dashed border-slate-300 mt-4">
+                <i class="fa-solid fa-map-location-dot text-3xl text-slate-400 mb-3"></i>
+                <p class="font-extrabold text-slate-700">Kecamatan PAC tidak ditemukan</p>
+                <p class="text-sm text-slate-500 mt-1 mb-4">Gunakan kata kunci nama kecamatan lain di Kabupaten Sukoharjo.</p>
+                <button type="button" data-action="clear-pac-search" class="px-5 py-2.5 rounded-xl bg-nu-900 text-white text-xs font-bold hover:bg-nu-700 transition-colors">
+                    Tampilkan Semua 12 PAC
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         6. PERS & RILIS BERITA + TULIS ARTIKEL + MODERASI REDAKSI
+    ====================================================================== -->
+    <section id="berita" class="py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Header Pers & Berita -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
+                <div class="max-w-2xl">
+                    <span class="inline-block px-3.5 py-1 rounded-full bg-nu-50 text-nu-900 border border-nu-200 text-xs font-extrabold uppercase tracking-wider mb-3">
+                        Lembaga Pers &amp; Penerbitan (LPP)
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
+                        Pers &amp; Rilis Berita
+                    </h2>
+                    <p class="text-slate-600 text-base mt-2 leading-relaxed">
+                        Liputan kegiatan cabang, kabar PAC, opini pelajar, dan rilis pers resmi PC IPNU IPPNU Kabupaten Sukoharjo.
+                    </p>
+                </div>
+
+                <!-- Tombol Aksi Berita: Tulis Artikel & Moderasi Redaksi -->
+                <div class="flex flex-wrap items-center gap-3 self-start lg:self-auto">
+                    <button
+                        type="button"
+                        id="moderationToggleBtn"
+                        data-action="toggle-moderation"
+                        class="inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-sm transition-all"
+                    >
+                        <i id="moderationBtnIcon" class="fa-solid fa-shield-halved text-nu-700"></i>
+                        <span id="moderationBtnText">Moderasi Redaksi</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        data-action="open-write-article"
+                        class="inline-flex items-center gap-2 bg-gold-500 hover:bg-gold-600 text-nu-950 font-extrabold text-sm px-6 py-3 rounded-2xl shadow-lg shadow-gold-500/20 transition-all transform hover:-translate-y-0.5"
+                    >
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Tulis Artikel</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Bar Indikator Mode Moderasi Redaksi Aktif -->
+            <div id="moderationActiveBar" class="hidden mb-8 p-4 sm:px-6 rounded-2xl bg-gradient-to-r from-nu-950 via-nu-900 to-nu-700 text-white border border-gold-400/60 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div class="flex items-start sm:items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-gold-500 text-nu-950 flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+                        <i class="fa-solid fa-user-shield text-base"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm font-bold leading-snug">
+                        <span class="text-gold-400">Mode Moderasi Redaksi Aktif</span> — Klik tombol <span class="underline decoration-gold-400">Hapus</span> pada artikel yang tidak pantas.
+                    </p>
+                </div>
+                <button
+                    type="button"
+                    data-action="exit-moderation"
+                    class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/25 text-xs font-extrabold transition-colors self-start sm:self-auto shrink-0"
+                >
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Keluar Mode Moderasi</span>
+                </button>
+            </div>
+
+            <!-- Filter Kategori Berita -->
+            <div id="newsCategoryBar" class="flex flex-wrap gap-2 mb-8">
+                <button type="button" data-cat="Semua" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold bg-nu-900 text-white shadow-sm transition-all">
+                    Semua
+                </button>
+                <button type="button" data-cat="Berita Cabang" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all">
+                    Berita Cabang
+                </button>
+                <button type="button" data-cat="Kabar PAC" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all">
+                    Kabar PAC
+                </button>
+                <button type="button" data-cat="Opini Pelajar" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all">
+                    Opini Pelajar
+                </button>
+                <button type="button" data-cat="Rilis Pers" class="cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all">
+                    Rilis Pers
+                </button>
+            </div>
+
+            <!-- Grid Kartu Berita -->
+            <div id="newsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+                <!-- Dirender secara dinamis -->
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
+         7. FOOTER RESMI PC IPNU IPPNU KABUPATEN SUKOHARJO
+    ====================================================================== -->
+    <footer id="kontak" class="bg-nu-950 text-slate-300 pt-16 pb-10 border-t-4 border-gold-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                <!-- Kolom 1: Identitas -->
+                <div class="lg:col-span-5">
+                    <div class="flex items-center gap-3.5 mb-5">
+                        <div class="w-12 h-12 rounded-2xl bg-white p-1 shrink-0">
+                            <img
+                                id="footerLogoImg"
+                                src="logo.png"
+                                alt="Logo PC IPNU IPPNU Sukoharjo"
+                                class="w-full h-full object-contain"
+                            >
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-lg text-white leading-tight">PC IPNU IPPNU</h3>
+                            <span class="text-xs font-extrabold text-gold-400 uppercase tracking-wider">Kabupaten Sukoharjo</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-400 leading-relaxed mb-6 max-w-md">
+                        Pimpinan Cabang Ikatan Pelajar Nahdlatul Ulama dan Ikatan Pelajar Putri Nahdlatul Ulama Kabupaten Sukoharjo. Mengabdi bersama pelajar dan santri berlandaskan Ahlussunnah wal Jama'ah An-Nahdliyah.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a id="footerIgSocial" href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram PC IPNU IPPNU Sukoharjo" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold-500 text-white hover:text-nu-950 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a id="footerWaSocial" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Sekretariat" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold-500 text-white hover:text-nu-950 flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                        </a>
+                        <a id="footerMailSocial" href="#" aria-label="Email Resmi" class="w-10 h-10 rounded-xl bg-white/10 hover:bg-gold-500 text-white hover:text-nu-950 flex items-center justify-center transition-colors">
+                            <i class="fa-solid fa-envelope text-base"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Navigasi Cepat -->
+                <div class="lg:col-span-3">
+                    <h4 class="font-extrabold text-white text-base mb-5">Navigasi Cepat</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#beranda" class="text-slate-400 hover:text-gold-400 transition-colors">Beranda Utama</a></li>
+                        <li><a href="#program" class="text-slate-400 hover:text-gold-400 transition-colors">Program Kerja Departemen</a></li>
+                        <li><a href="#pusat-data" class="text-slate-400 hover:text-gold-400 transition-colors">Pusat Data &amp; Database</a></li>
+                        <li><a href="#portal-pac" class="text-slate-400 hover:text-gold-400 transition-colors">Portal 12 PAC Sukoharjo</a></li>
+                        <li><a href="#berita" class="text-slate-400 hover:text-gold-400 transition-colors">Pers &amp; Rilis Berita</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Sekretariat & Kontak -->
+                <div class="lg:col-span-4">
+                    <h4 class="font-extrabold text-white text-base mb-5">Sekretariat &amp; Kontak Resmi</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-gold-400 mt-1 shrink-0"></i>
+                            <span id="footerAddressText" class="text-slate-400 leading-relaxed">
+                                Gedung PCNU Kabupaten Sukoharjo, Jawa Tengah
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-gold-400 shrink-0"></i>
+                            <a id="footerWaText" href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gold-400 transition-colors">
+                                +62 812-3456-7890
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold-400 shrink-0"></i>
+                            <a id="footerEmailText" href="#" class="text-slate-400 hover:text-gold-400 transition-colors break-all">
+                                sekretariat@pcipnuippnusukoharjo.or.id
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-instagram text-gold-400 shrink-0"></i>
+                            <a id="footerIgText" href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-gold-400 transition-colors">
+                                @pcipnuippnusukoharjo
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <p>&copy; <span id="footerYear">2026</span> PC IPNU IPPNU Kabupaten Sukoharjo. Seluruh Hak Cipta Dilindungi.</p>
+                <p class="text-slate-400 font-semibold">Belajar &bull; Berjuang &bull; Bertaqwa</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =====================================================================
+         MODAL 1: DETAIL PROGRAM KERJA DEPARTEMEN & LEMBAGA
+    ====================================================================== -->
+    <div id="programDetailModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="pdmTitle">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/65 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+            <div class="px-6 py-5 sm:px-8 sm:py-6 bg-slate-50 border-b border-slate-200 flex items-start justify-between gap-4">
+                <div class="flex items-center gap-4">
+                    <div id="pdmIconBox" class="w-12 h-12 rounded-2xl bg-nu-900 text-white flex items-center justify-center shrink-0 shadow-sm">
+                        <i id="pdmIcon" class="fa-solid fa-sitemap text-xl"></i>
+                    </div>
+                    <div>
+                        <span id="pdmType" class="text-[11px] font-extrabold uppercase tracking-wider text-gold-600">Departemen</span>
+                        <h3 id="pdmTitle" class="text-xl font-extrabold text-slate-900 leading-snug">Nama Departemen</h3>
+                    </div>
+                </div>
+                <button type="button" data-action="close-modals" aria-label="Tutup Modal" class="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-500 hover:text-red-600 flex items-center justify-center transition-colors shrink-0">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 overflow-y-auto custom-scroll space-y-5">
+                <div class="p-4 rounded-2xl bg-nu-50 border border-nu-100">
+                    <div class="text-xs font-extrabold uppercase tracking-wider text-nu-900 mb-1">
+                        <i class="fa-solid fa-bullseye text-gold-600 mr-1.5"></i>Fokus Utama
+                    </div>
+                    <p id="pdmFocus" class="text-sm font-semibold text-nu-950 leading-relaxed"></p>
+                </div>
+
+                <div>
+                    <h4 class="font-extrabold text-slate-900 text-sm mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-list-check text-nu-700"></i>
+                        <span>Daftar Program Kerja</span>
+                    </h4>
+                    <ul id="pdmPrograms" class="space-y-2.5">
+                        <!-- Diisi via JS -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end">
+                <button type="button" data-action="close-modals" class="px-6 py-2.5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white text-sm font-bold transition-colors">
+                    Tutup
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 2: LOGIN DATABASE ANGGOTA & PANEL AKSES TERENKRIPSI
+    ====================================================================== -->
+    <div id="databaseLoginModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="dblmTitle">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/65 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden z-10">
+            <div class="px-6 py-5 sm:px-8 sm:py-6 bg-nu-900 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center">
+                        <i class="fa-solid fa-database text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 id="dblmTitle" class="text-lg font-extrabold">Database Anggota</h3>
+                        <p id="dblmSubtitle" class="text-xs text-emerald-200">Login Pengurus PC IPNU IPPNU</p>
+                    </div>
+                </div>
+                <button type="button" data-action="close-modals" aria-label="Tutup Modal Database" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Form Login -->
+            <div id="dbLoginFormPanel" class="p-6 sm:p-8">
+                <form id="dbAuthForm" class="space-y-4">
+                    <div>
+                        <label for="dbUserField" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Username / NIA Pengurus
+                        </label>
+                        <div class="relative">
+                            <i class="fa-solid fa-user-shield absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <input
+                                type="text"
+                                id="dbUserField"
+                                autocomplete="username"
+                                required
+                                placeholder="Masukkan username atau NIA"
+                                class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="dbPassField" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Kata Sandi
+                        </label>
+                        <div class="relative">
+                            <i class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <input
+                                type="password"
+                                id="dbPassField"
+                                autocomplete="current-password"
+                                required
+                                placeholder="Masukkan kata sandi"
+                                class="w-full pl-11 pr-11 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                            <button
+                                type="button"
+                                data-action="toggle-pass"
+                                data-target="dbPassField"
+                                data-icon="dbPassEye"
+                                aria-label="Tampilkan atau sembunyikan sandi"
+                                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1"
+                            >
+                                <i id="dbPassEye" class="fa-solid fa-eye text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="dbAuthError" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-exclamation mt-0.5 shrink-0"></i>
+                        <span id="dbAuthErrorMsg">Username atau kata sandi tidak valid.</span>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full py-3.5 px-5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white font-extrabold text-sm shadow-lg shadow-nu-900/20 transition-all flex items-center justify-center gap-2"
+                    >
+                        <span>Verifikasi &amp; Masuk</span>
+                        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Panel Sukses Setelah Login SHA-256 Valid -->
+            <div id="dbAuthorizedPanel" class="hidden p-6 sm:p-8 space-y-4">
+                <div class="p-4 rounded-2xl bg-nu-50 border border-nu-200 flex items-start gap-3.5">
+                    <div class="w-10 h-10 rounded-xl bg-nu-700 text-white flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-circle-check text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-[11px] font-extrabold uppercase tracking-wider text-nu-700">Autentikasi SHA-256 Berhasil</span>
+                        <h4 class="font-extrabold text-slate-900 text-sm mt-0.5">Akses Database Anggota Terbuka</h4>
+                        <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                            Tautan folder terenkripsi didekode secara aman di memori. Klik tombol di bawah untuk membuka direktori.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tombol Aksi Tanpa Atribut href di DOM -->
+                <button
+                    type="button"
+                    data-action="open-decrypted-db-drive"
+                    class="w-full py-3.5 px-5 rounded-xl bg-gold-500 hover:bg-gold-600 text-nu-950 font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2.5"
+                >
+                    <i class="fa-brands fa-google-drive text-base"></i>
+                    <span>Buka Google Drive Database Anggota</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </button>
+
+                <!-- Tombol Utilitas Generator Hash Password & Link -->
+                <button
+                    type="button"
+                    data-action="open-crypto-generator"
+                    class="w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 font-bold text-xs transition-all flex items-center justify-center gap-2"
+                >
+                    <i class="fa-solid fa-wand-magic-sparkles text-nu-800"></i>
+                    <span>Generator Hash Password &amp; Link</span>
+                </button>
+
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span class="text-xs text-slate-400">Sesi pengurus aktif</span>
+                    <button
+                        type="button"
+                        data-action="admin-logout"
+                        class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-red-50 hover:bg-red-100 text-red-600 text-xs font-extrabold transition-colors"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 3: PEMBACA ARTIKEL LENGKAP (DENGAN TOMBOL HAPUS REDAKSI)
+    ====================================================================== -->
+    <div id="readArticleModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="ramHeading">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+            <div class="relative h-56 sm:h-64 bg-nu-900 shrink-0">
+                <img
+                    id="ramPhoto"
+                    src=""
+                    alt="Foto Berita"
+                    class="w-full h-full object-cover"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-slate-950/30"></div>
+                <button
+                    type="button"
+                    data-action="close-modals"
+                    aria-label="Tutup Bacaan"
+                    class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/95 hover:bg-white text-slate-800 hover:text-red-600 flex items-center justify-center shadow-lg transition-colors"
+                >
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <span id="ramBadge" class="absolute bottom-4 left-6 px-3.5 py-1 rounded-full bg-gold-500 text-nu-950 text-xs font-extrabold uppercase tracking-wide">
+                    Kategori
+                </span>
+            </div>
+
+            <div class="p-6 sm:p-8 overflow-y-auto custom-scroll">
+                <h3 id="ramHeading" class="text-2xl sm:text-3xl font-extrabold text-slate-900 leading-tight mb-4">
+                    Judul Artikel
+                </h3>
+                <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-slate-500 pb-5 mb-6 border-b border-slate-200">
+                    <span><i class="fa-solid fa-user-pen text-nu-700 mr-1.5"></i><strong id="ramWriter" class="text-slate-700">Penulis</strong></span>
+                    <span><i class="fa-solid fa-location-dot text-gold-600 mr-1.5"></i><span id="ramOrigin">Asal PAC</span></span>
+                    <span><i class="fa-regular fa-calendar text-nu-700 mr-1.5"></i><span id="ramDate">Tanggal</span></span>
+                </div>
+                <div id="ramBody" class="text-slate-700 text-sm sm:text-base leading-relaxed space-y-4">
+                    <!-- Paragraf artikel -->
+                </div>
+            </div>
+
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+                <button
+                    type="button"
+                    data-action="delete-from-reader"
+                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-extrabold shadow-sm transition-colors"
+                >
+                    <i class="fa-solid fa-trash-can"></i>
+                    <span>Hapus</span>
+                </button>
+                <button type="button" data-action="close-modals" class="ml-auto px-6 py-2.5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white text-sm font-bold transition-colors">
+                    Tutup Bacaan
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 4: FORM TULIS ARTIKEL (DENGAN PREVIEW FOTO & FILTER KATA KASAR)
+    ====================================================================== -->
+    <div id="writeArticleModal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="wamHeading">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+            <div class="px-6 py-5 sm:px-8 sm:py-6 bg-nu-900 text-white flex items-center justify-between gap-4">
+                <div>
+                    <h3 id="wamHeading" class="text-xl font-extrabold">Tulis &amp; Publikasikan Artikel</h3>
+                    <p class="text-xs sm:text-sm text-emerald-200 mt-0.5">
+                        Kirim berita kegiatan cabang, kabar PAC, opini pelajar, atau rilis pers.
+                    </p>
+                </div>
+                <button type="button" data-action="close-modals" aria-label="Tutup Form Artikel" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shrink-0">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 overflow-y-auto custom-scroll">
+                <form id="articleSubmitForm" class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="inputWriterName" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                                Nama Penulis <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="inputWriterName"
+                                required
+                                placeholder="Nama lengkap penulis"
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                        </div>
+                        <div>
+                            <label for="inputWriterOrigin" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                                Asal PAC / Komisariat <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="inputWriterOrigin"
+                                required
+                                placeholder="Contoh: PAC Kartasura / PK MA..."
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="inputArticleCategory" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                                Kategori <span class="text-red-500">*</span>
+                            </label>
+                            <select
+                                id="inputArticleCategory"
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                                <option value="Berita Cabang">Berita Cabang</option>
+                                <option value="Kabar PAC">Kabar PAC</option>
+                                <option value="Opini Pelajar">Opini Pelajar</option>
+                                <option value="Rilis Pers">Rilis Pers</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="inputArticleTitle" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                                Judul Artikel <span class="text-red-500">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                id="inputArticleTitle"
+                                required
+                                placeholder="Masukkan judul berita atau opini..."
+                                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Upload Foto dengan Preview & Kompresi Canvas -->
+                    <div>
+                        <label class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Upload Foto Dokumentasi <span class="text-slate-400 font-normal normal-case">(Otomatis dikompresi ringan agar tersimpan cepat)</span>
+                        </label>
+                        <label for="inputArticlePhoto" class="flex flex-col items-center justify-center p-5 border-2 border-dashed border-slate-300 hover:border-nu-700 rounded-2xl bg-slate-50 hover:bg-nu-50/40 cursor-pointer transition-colors">
+                            <i class="fa-solid fa-image text-2xl text-nu-700 mb-1.5"></i>
+                            <span class="text-xs font-bold text-slate-700">Klik untuk memilih foto dokumentasi</span>
+                            <span class="text-[11px] text-slate-500 mt-0.5">Format JPG, PNG, WebP</span>
+                            <input type="file" id="inputArticlePhoto" accept="image/*" class="hidden">
+                        </label>
+
+                        <div id="photoPreviewBox" class="hidden mt-3 relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100">
+                            <img id="photoPreviewImage" src="" alt="Preview Foto" class="w-full h-44 object-cover">
+                            <button
+                                type="button"
+                                data-action="remove-uploaded-photo"
+                                class="absolute top-2.5 right-2.5 px-3 py-1.5 rounded-xl bg-slate-900/80 hover:bg-red-600 text-white text-xs font-bold flex items-center gap-1.5 transition-colors"
+                            >
+                                <i class="fa-solid fa-trash-can"></i> Hapus Foto
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="inputArticleBody" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Isi Artikel <span class="text-red-500">*</span>
+                        </label>
+                        <textarea
+                            id="inputArticleBody"
+                            rows="5"
+                            required
+                            placeholder="Tuliskan isi berita atau opini secara santun, informatif, dan sesuai etika pelajar NU..."
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all resize-y"
+                        ></textarea>
+                    </div>
+
+                    <!-- Pesan Peringatan Filter Kata Kasar / Tidak Pantas -->
+                    <div id="profanityWarningBox" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-start gap-2.5">
+                        <i class="fa-solid fa-shield-virus mt-0.5 shrink-0"></i>
+                        <span id="profanityWarningText">Konten terdeteksi mengandung kata tidak pantas. Mohon perbaiki sebelum menerbitkan.</span>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-200 flex flex-col-reverse sm:flex-row justify-end gap-3">
+                        <button type="button" data-action="close-modals" class="px-6 py-3 rounded-xl border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-100 transition-colors">
+                            Batal
+                        </button>
+                        <button type="submit" class="px-7 py-3 rounded-xl bg-nu-900 hover:bg-nu-700 text-white font-extrabold text-sm shadow-lg shadow-nu-900/20 transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-paper-plane text-gold-400"></i>
+                            <span>Terbitkan Artikel</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 5: LOGIN ADMIN REDAKSI (MODERASI & HAPUS ARTIKEL)
+    ====================================================================== -->
+    <div id="redaksiLoginModal" class="fixed inset-0 z-[105] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="rlmTitle">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/70 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-md rounded-3xl shadow-2xl overflow-hidden z-10">
+            <div class="px-6 py-5 sm:px-8 sm:py-6 bg-nu-950 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 id="rlmTitle" class="text-lg font-extrabold">Login Admin Redaksi</h3>
+                        <p class="text-xs text-emerald-200">Autentikasi SHA-256 Moderasi Berita</p>
+                    </div>
+                </div>
+                <button type="button" data-action="close-modals" aria-label="Tutup Login Redaksi" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8">
+                <p class="text-xs text-slate-600 leading-relaxed mb-5 bg-slate-50 p-3.5 rounded-xl border border-slate-200">
+                    Masukkan akun pengurus redaksi LPP / Kominfo PC IPNU IPPNU Sukoharjo untuk mengaktifkan mode moderasi dan menghapus artikel yang tidak pantas.
+                </p>
+
+                <form id="redaksiAuthForm" class="space-y-4">
+                    <div>
+                        <label for="redaksiUserField" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Username Admin
+                        </label>
+                        <div class="relative">
+                            <i class="fa-solid fa-user-lock absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <input
+                                type="text"
+                                id="redaksiUserField"
+                                autocomplete="username"
+                                required
+                                placeholder="Masukkan username admin"
+                                class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="redaksiPassField" class="block text-xs font-extrabold uppercase tracking-wider text-slate-600 mb-1.5">
+                            Kata Sandi
+                        </label>
+                        <div class="relative">
+                            <i class="fa-solid fa-key absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                            <input
+                                type="password"
+                                id="redaksiPassField"
+                                autocomplete="current-password"
+                                required
+                                placeholder="Masukkan kata sandi"
+                                class="w-full pl-11 pr-11 py-3 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 focus:bg-white focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none transition-all"
+                            >
+                            <button
+                                type="button"
+                                data-action="toggle-pass"
+                                data-target="redaksiPassField"
+                                data-icon="redaksiPassEye"
+                                aria-label="Tampilkan atau sembunyikan sandi"
+                                class="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 p-1"
+                            >
+                                <i id="redaksiPassEye" class="fa-solid fa-eye text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="redaksiAuthError" class="hidden p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-semibold flex items-start gap-2.5">
+                        <i class="fa-solid fa-circle-exclamation mt-0.5 shrink-0"></i>
+                        <span id="redaksiAuthErrorMsg">Username atau kata sandi admin salah.</span>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full py-3.5 px-5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white font-extrabold text-sm shadow-lg shadow-nu-900/20 transition-all flex items-center justify-center gap-2"
+                    >
+                        <i class="fa-solid fa-shield-check text-gold-400"></i>
+                        <span>Aktifkan Mode Moderasi</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 6: KONFIRMASI HAPUS ARTIKEL YANG TIDAK PANTAS
+    ====================================================================== -->
+    <div id="deleteConfirmModal" class="fixed inset-0 z-[110] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="dcmTitle">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/75 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden z-10">
+            <div class="px-6 py-5 sm:px-8 sm:py-6 bg-red-600 text-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-white/15 text-white flex items-center justify-center">
+                        <i class="fa-solid fa-trash-can text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 id="dcmTitle" class="text-lg font-extrabold">Konfirmasi Hapus Artikel</h3>
+                        <p class="text-xs text-red-100">Tindakan moderasi redaksi permanen</p>
+                    </div>
+                </div>
+                <button type="button" data-action="close-modals" aria-label="Tutup Konfirmasi Hapus" class="w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 space-y-5">
+                <div class="p-4 rounded-2xl bg-red-50 border border-red-200">
+                    <span class="text-[11px] font-extrabold uppercase tracking-wider text-red-600 block mb-1">
+                        Artikel Target Penghapusan:
+                    </span>
+                    <h4 id="dcmArticleTitle" class="font-extrabold text-slate-900 text-base leading-snug">
+                        Judul Artikel
+                    </h4>
+                    <p id="dcmArticleMeta" class="text-xs text-slate-500 mt-1.5">
+                        Penulis &bull; Kategori
+                    </p>
+                </div>
+
+                <div>
+                    <label for="dcmReasonSelect" class="block text-xs font-extrabold uppercase tracking-wider text-slate-700 mb-2">
+                        Pilih Alasan Penghapusan <span class="text-red-500">*</span>
+                    </label>
+                    <select
+                        id="dcmReasonSelect"
+                        class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-sm font-semibold text-slate-800 focus:bg-white focus:border-red-600 focus:ring-2 focus:ring-red-600/20 outline-none transition-all"
+                    >
+                        <option value="Konten tidak pantas / SARA">Konten tidak pantas / SARA</option>
+                        <option value="Hoaks / informasi keliru">Hoaks / informasi keliru</option>
+                        <option value="Spam / duplikat">Spam / duplikat</option>
+                        <option value="Pelanggaran etika organisasi">Pelanggaran etika organisasi</option>
+                    </select>
+                </div>
+
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    Artikel yang dihapus akan langsung dihilangkan dari portal berita dan tidak ditampilkan kembali kepada pengunjung.
+                </p>
+
+                <div class="pt-4 border-t border-slate-200 flex flex-col-reverse sm:flex-row justify-end gap-3">
+                    <button
+                        type="button"
+                        data-action="close-modals"
+                        class="px-5 py-3 rounded-xl border border-slate-300 text-slate-700 font-bold text-sm hover:bg-slate-100 transition-colors"
+                    >
+                        Batal
+                    </button>
+                    <button
+                        type="button"
+                        data-action="confirm-delete-article"
+                        class="px-6 py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-extrabold text-sm shadow-lg shadow-red-600/25 transition-all flex items-center justify-center gap-2"
+                    >
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span>Ya, Hapus Permanen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         MODAL 7: GENERATOR HASH SHA-256 PASSWORD & LINK TERENKODE (KHUSUS ADMIN)
+    ====================================================================== -->
+    <div id="adminCryptoGeneratorModal" class="fixed inset-0 z-[115] hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="acgmTitle">
+        <div class="modal-overlay absolute inset-0 bg-slate-950/75 backdrop-blur-sm"></div>
+        <div class="relative bg-white w-full max-w-xl rounded-3xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh]">
+            <div class="px-6 py-5 sm:px-8 sm:py-6 bg-nu-950 text-white flex items-center justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 id="acgmTitle" class="text-lg font-extrabold">Generator Hash Password &amp; Link</h3>
+                        <p class="text-xs text-emerald-200">Utilitas Kriptografi Pengurus PC IPNU IPPNU</p>
+                    </div>
+                </div>
+                <button type="button" data-action="close-modals" aria-label="Tutup Generator" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors shrink-0">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="p-6 sm:p-8 overflow-y-auto custom-scroll space-y-6">
+                <div class="p-3.5 rounded-2xl bg-gold-50 border border-gold-200 text-xs text-slate-700 leading-relaxed">
+                    Gunakan alat ini untuk menghasilkan <strong>Hash SHA-256</strong> (salin ke properti <code class="font-mono text-nu-800">customUserHash</code> atau <code class="font-mono text-nu-800">customPassHash</code>) serta <strong>String Terenkode XOR + Base64</strong> (salin ke properti <code class="font-mono text-nu-800">dbVault</code>) pada konfigurasi internal file HTML.
+                </div>
+
+                <!-- Bagian A: Generator Hash SHA-256 -->
+                <div class="space-y-3 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                    <h4 class="font-extrabold text-sm text-nu-950 flex items-center gap-2">
+                        <i class="fa-solid fa-fingerprint text-nu-700"></i>
+                        <span>1. Generator Hash SHA-256 (Username / Password)</span>
+                    </h4>
+                    <div>
+                        <label for="genPlainSecretInput" class="block text-xs font-bold text-slate-600 mb-1">
+                            Ketik Username atau Kata Sandi Baru:
+                        </label>
+                        <input
+                            type="text"
+                            id="genPlainSecretInput"
+                            placeholder="Contoh: katasandibaru2026"
+                            class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-800 focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none"
+                        >
+                    </div>
+                    <div>
+                        <label for="genSha256Output" class="block text-xs font-bold text-slate-600 mb-1">
+                            Hasil Hash SHA-256 (64 Karakter Hex):
+                        </label>
+                        <div class="flex gap-2">
+                            <input
+                                type="text"
+                                id="genSha256Output"
+                                readonly
+                                placeholder="Hash SHA-256 akan muncul otomatis di sini..."
+                                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-100 border border-slate-300 font-mono text-xs text-slate-800 select-all outline-none"
+                            >
+                            <button
+                                type="button"
+                                data-action="copy-field"
+                                data-target="genSha256Output"
+                                class="px-4 py-2.5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white text-xs font-extrabold shrink-0 transition-colors"
+                            >
+                                Salin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bagian B: Generator Link Terenkode XOR + Base64 -->
+                <div class="space-y-3 p-4 rounded-2xl bg-slate-50 border border-slate-200">
+                    <h4 class="font-extrabold text-sm text-nu-950 flex items-center gap-2">
+                        <i class="fa-solid fa-link text-gold-600"></i>
+                        <span>2. Generator Link Google Drive Terenkode (XOR + Base64)</span>
+                    </h4>
+                    <div>
+                        <label for="genPlainUrlInput" class="block text-xs font-bold text-slate-600 mb-1">
+                            Tempel Tautan Google Drive Database Anggota:
+                        </label>
+                        <input
+                            type="url"
+                            id="genPlainUrlInput"
+                            placeholder="https://drive.google.com/drive/folders/..."
+                            class="w-full px-4 py-2.5 rounded-xl bg-white border border-slate-300 text-sm text-slate-800 focus:border-nu-700 focus:ring-2 focus:ring-nu-700/20 outline-none"
+                        >
+                    </div>
+                    <div>
+                        <label for="genEncodedUrlOutput" class="block text-xs font-bold text-slate-600 mb-1">
+                            Hasil String Terenkode (Salin ke properti <code class="font-mono text-nu-800">dbVault</code>):
+                        </label>
+                        <div class="flex gap-2">
+                            <input
+                                type="text"
+                                id="genEncodedUrlOutput"
+                                readonly
+                                placeholder="String XOR + Base64 akan muncul di sini..."
+                                class="w-full px-3.5 py-2.5 rounded-xl bg-slate-100 border border-slate-300 font-mono text-xs text-slate-800 select-all outline-none"
+                            >
+                            <button
+                                type="button"
+                                data-action="copy-field"
+                                data-target="genEncodedUrlOutput"
+                                class="px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-600 text-nu-950 text-xs font-extrabold shrink-0 transition-colors"
+                            >
+                                Salin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-between items-center gap-3">
+                <button
+                    type="button"
+                    data-action="open-db-modal"
+                    class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-700 hover:bg-slate-100 text-xs font-bold transition-colors"
+                >
+                    &larr; Kembali ke Panel Database
+                </button>
+                <button
+                    type="button"
+                    data-action="close-modals"
+                    class="px-6 py-2.5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white text-sm font-bold transition-colors"
+                >
+                    Selesai
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- =====================================================================
+         TOAST NOTIFICATION (PENGGANTI alert() & confirm())
+    ====================================================================== -->
+    <div id="toastBox" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-[130] max-w-sm w-[calc(100%-2.5rem)] bg-nu-950 text-white border border-gold-500/45 rounded-2xl p-4 shadow-2xl transform translate-y-24 opacity-0 pointer-events-none transition-all duration-300 flex items-start gap-3.5">
+        <div id="toastIconContainer" class="w-9 h-9 rounded-xl bg-nu-500/20 text-nu-500 flex items-center justify-center shrink-0 mt-0.5">
+            <i id="toastIconEl" class="fa-solid fa-circle-check"></i>
+        </div>
+        <div class="flex-1 min-w-0">
+            <h4 id="toastHeading" class="font-extrabold text-sm text-white">Notifikasi</h4>
+            <p id="toastBody" class="text-xs text-slate-300 mt-0.5 leading-relaxed">Pesan sistem.</p>
+        </div>
+        <button type="button" data-action="dismiss-toast" aria-label="Tutup Notifikasi" class="text-slate-400 hover:text-white p-1">
+            <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+    </div>
+
+    <!-- =====================================================================
+         SKRIP UTAMA TERENKAPSULASI DALAM IIFE CLOSURE KETAT (ANTI-DEVTOOLS)
+    ====================================================================== -->
+    <script>
+        (function () {
+            'use strict';
+
+            /**
+             * Konfigurasi internal tertutup dalam closure IIFE (Object.freeze).
+             * Tidak diekspos ke objek window maupun variabel global.
+             */
+            const _internalRegistry = Object.freeze({
+                brandAsset: 'LOGO.WEB.png',
+                cipherSeed: 'PCIPNUIPPNUSKH',
+                authVault: Object.freeze({
+                    defaultUserHash: '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918',
+                    seedVector: Object.freeze([0x96, 0x65, 0xD6, 0xA5]),
+                    maskVector: Object.freeze([0xA7, 0x5C, 0xE3, 0x91]),
+                    customUserHash: 'c896e3f00f6b40dbfb295c2d6a9f9f74884ca6805dc22f4d9c877a150d40e29c',
+                    customPassHash: '492be77f878730e29b80cde08d1e42114aed9f4f9c9bd0ade5b59b43388db4cd'
+                }),
+                publicFolders: Object.freeze({
+                    suratMenyurat: 'https://drive.google.com/drive/folders/1uEqODCZnMs-DlhbzJFcoMm6fPkGxP-Ri',
+                    modulKaderisasi: 'https://drive.google.com',
+                    peraturanOrganisasi: 'https://drive.google.com'
+                }),
+                dbVault: 'ODc9ID1vZn80PDwlLmY3LCY3IjBnMz8jejc5ISYmZjYhOS01Ij16YiEYKCU6BjtnCzEYNC1hMj0eOgMZJhg+KScCEiUGDSEJdiU9JXQjOC8nOiUv',
+                pacDirectory: Object.freeze({
+                    'Baki': 'https://www.instagram.com/pac_ipnuippnu_baki?dmpr=MXJwbWh0dnRybWN5eg==',
+                    'Bendosari': 'https://www.instagram.com/pacipnuippnubendosari?cnvx=MW9yYWo0dGp2cXJveg==',
+                    'Bulu': 'https://www.instagram.com/pacipnuippnu_bulu?avpt=dTZrYTBzZDNtZXh0',
+                    'Gatak': 'https://www.instagram.com/ipnu.ippnu.gatak?lqvp=MWlzaDVmNTVuMHJ4bg==',
+                    'Grogol': 'https://www.instagram.com/pacipnuippnu.grogol?evlk=Z2VzNm9kaTR2djFs',
+                    'Kartasura': 'https://www.instagram.com/pacipnuippnukartasura?cnvx=MWM5dmc5dDU4b2E1bA==',
+                    'Mojolaban': 'https://www.instagram.com/pacipnuippnumojolaban?avpt=YnplempuY2dkM243',
+                    'Nguter': 'https://www.instagram.com/ipnuippnunguter?dmpr=MWpsaTVteGxwcXI1cg==',
+                    'Polokarto': 'https://www.instagram.com/pac.ipnuippnupolokarto?bqrl=MXE2eDc3dzZzdGVnbw==',
+                    'Sukoharjo': 'https://www.instagram.com/pacipnuippnuskh?dmpr=MWk0MTY0ZXN6ZDNvdA==',
+                    'Tawangsari': 'https://www.instagram.com/pacipnuippnu_tawangsarii?bqrl=MXJqb2xzanc5bzllZQ==',
+                    'Weru': 'https://www.instagram.com/pac.ipnuippnuweru?gwpx=MWJtaGw2YXdoendoaw=='
+                }),
+                secretariat: Object.freeze({
+                    address: 'Gedung PCNU Kabupaten Sukoharjo, Jl. Pemuda, Sukoharjo, Jawa Tengah',
+                    whatsappDisplay: '+62 896-9540-2762',
+                    whatsappLink: 'https://wa.me/6281234567890',
+                    email: 'sekretariat@pcipnuippnusukoharjo.or.id',
+                    instagramHandle: '@ipnuippnusukoharjo',
+                    instagramLink: 'https://www.instagram.com/ipnuippnusukoharjo?hvrq=NTdoMGR4cWRxMHR3'
+                })
+            });
+
+            const STORAGE_KEY_USER_ARTICLES = 'pc_ipnu_ippnu_skh_articles_v3';
+            const STORAGE_KEY_DELETED_IDS = 'pc_ipnu_ippnu_skh_deleted_ids_v3';
+            const SESSION_KEY_ADMIN_AUTH = 'pc_ipnu_ippnu_skh_admin_verified_v3';
+
+            const INAPPROPRIATE_WORDS = Object.freeze([
+                'anjing', 'babi', 'bangsat', 'bajingan', 'brengsek', 'kampret',
+                'kontol', 'memek', 'ngentot', 'jancok', 'jancuk', 'cok',
+                'asu', 'goblok', 'tolol', 'idiot', 'keparat', 'pelacur',
+                'lonte', 'bokep', 'porno', 'judi', 'slot', 'gacor', 'togel'
+            ]);
+
+            /**
+             * Fallback Vector SVG Data-URI apabila file logo.png belum diunggah
+             */
+            const FALLBACK_LOGO_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">' +
+                '<defs><linearGradient id="nuG" x1="0" y1="0" x2="1" y2="1">' +
+                '<stop offset="0%" stop-color="#022c22"/><stop offset="100%" stop-color="#047857"/>' +
+                '</linearGradient></defs>' +
+                '<circle cx="60" cy="60" r="56" fill="url(#nuG)" stroke="#f59e0b" stroke-width="5"/>' +
+                '<circle cx="60" cy="60" r="46" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4 3"/>' +
+                '<text x="60" y="54" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="16">IPNU</text>' +
+                '<text x="60" y="72" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-weight="800" font-size="15">IPPNU</text>' +
+                '<text x="60" y="88" text-anchor="middle" fill="#d1fae5" font-family="sans-serif" font-weight="700" font-size="8.5" letter-spacing="1.2">SUKOHARJO</text>' +
+                '</svg>'
+            );
+
+            function generateNewsBannerSvg(titleText, subtitleText, accentColor) {
+                const safeTitle = String(titleText || 'Warta Pelajar NU')
+                    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                const safeSub = String(subtitleText || 'PC IPNU IPPNU Kabupaten Sukoharjo')
+                    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+                return 'data:image/svg+xml;utf8,' + encodeURIComponent(
+                    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">` +
+                    `<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">` +
+                    `<stop offset="0%" stop-color="#022c22"/><stop offset="55%" stop-color="#064e3b"/><stop offset="100%" stop-color="#047857"/>` +
+                    `</linearGradient></defs>` +
+                    `<rect width="800" height="450" fill="url(#bg)"/>` +
+                    `<circle cx="710" cy="95" r="145" fill="${accentColor}" fill-opacity="0.18"/>` +
+                    `<circle cx="110" cy="390" r="130" fill="#10b981" fill-opacity="0.16"/>` +
+                    `<rect x="48" y="46" width="235" height="34" rx="17" fill="${accentColor}" fill-opacity="0.22" stroke="${accentColor}" stroke-width="1.5"/>` +
+                    `<text x="165" y="68" text-anchor="middle" fill="#fbbf24" font-family="sans-serif" font-weight="800" font-size="13" letter-spacing="1.5">PC IPNU IPPNU SUKOHARJO</text>` +
+                    `<text x="48" y="215" fill="#ffffff" font-family="sans-serif" font-weight="800" font-size="33">${safeTitle}</text>` +
+                    `<text x="48" y="258" fill="#d1fae5" font-family="sans-serif" font-weight="600" font-size="18">${safeSub}</text>` +
+                    `<line x1="48" y1="365" x2="752" y2="365" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5"/>` +
+                    `<text x="48" y="398" fill="#fbbf24" font-family="sans-serif" font-weight="700" font-size="14">BELAJAR • BERJUANG • BERTAQWA</text>` +
+                    `</svg>`
+                );
+            }
+
+            const DEFAULT_NEWS_SVG = generateNewsBannerSvg(
+                'Dokumentasi Pelajar NU',
+                'PC IPNU IPPNU Kabupaten Sukoharjo',
+                '#f59e0b'
+            );
+
+            /**
+             * Data 9 Departemen & Lembaga PC IPNU IPPNU Kabupaten Sukoharjo
+             */
+            const DEPARTMENTS_DATA = Object.freeze([
+                {
+                    id: 'dept-organisasi',
+                    type: 'Departemen',
+                    name: 'Dept. Organisasi',
+                    icon: 'fa-sitemap',
+                    iconBg: 'bg-emerald-100 text-nu-800',
+                    focus: 'Penguatan tata kelola kelembagaan, tertib administrasi, dan konsolidasi struktur dari cabang hingga ranting/komisariat.',
+                    programs: [
+                        'Rapat Kerja Cabang (RAKERCAB) dan Rapat Pimpinan Cabang (RAPIMCAB)',
+                        'Akreditasi dan Monitoring Evaluasi (Monev) 12 PAC se-Kabupaten Sukoharjo',
+                        'Pendampingan Pembentukan dan Pengesahan Pimpinan Ranting & Komisariat',
+                        'Pelatihan Administrasi dan Manajemen Kesekretariatan Terpadu'
+                    ]
+                },
+                {
+                    id: 'dept-kaderisasi',
+                    type: 'Departemen',
+                    name: 'Dept. Kaderisasi',
+                    icon: 'fa-user-graduate',
+                    iconBg: 'bg-amber-100 text-gold-600',
+                    focus: 'Mencetak kader militan, berideologi Aswaja An-Nahdliyah, serta menyiapkan jenjang pelatih dan instruktur berkualitas.',
+                    programs: [
+                        'Latihan Kader Muda (LAKMUD) Tingkat Kabupaten Sukoharjo',
+                        'Latihan Pelatih (LATPEL) dan Pelatihan Fasilitator Pengkaderan',
+                        'Standarisasi Kurikulum dan Pendampingan MAKESTA di seluruh PAC',
+                        'Follow-Up Pasca Kaderisasi dan Pemetaan Jenjang Kader'
+                    ]
+                },
+                {
+                    id: 'dept-jaringan',
+                    type: 'Departemen',
+                    name: 'Dept. Jaringan Sekolah & Pesantren',
+                    icon: 'fa-school',
+                    iconBg: 'bg-sky-100 text-sky-600',
+                    focus: 'Perluasan basis pelajar dan santri melalui pendirian serta penguatan Pimpinan Komisariat di sekolah, madrasah, dan pesantren.',
+                    programs: [
+                        'Safari Komisariat ke Sekolah Ma’arif NU, Madrasah, dan Pondok Pesantren',
+                        'Pembentukan Pimpinan Komisariat (PK) Baru di Sekolah Negeri & Swasta',
+                        'Masa Kesetiaan Anggota (MAKESTA) Raya Berbasis Komisariat',
+                        'Forum Silaturahmi Ketua Komisariat se-Kabupaten Sukoharjo'
+                    ]
+                },
+                {
+                    id: 'dept-dakwah',
+                    type: 'Departemen',
+                    name: 'Dept. Dakwah & Sosial',
+                    icon: 'fa-mosque',
+                    iconBg: 'bg-teal-100 text-teal-700',
+                    focus: 'Menghidupkan tradisi amaliyah Ahlussunnah wal Jama’ah di kalangan pelajar serta kepekaan sosial kemasyarakatan.',
+                    programs: [
+                        'Majelis Sholawat dan Rutinan Kajian Kitab Kuning Pelajar NU',
+                        'Safari Ramadhan, Pesantren Kilat Pelajar, dan Tadarus Bersama',
+                        'Bakti Sosial Pelajar Peduli Bencana dan Santunan Anak Yatim',
+                        'Penguatan Amaliyah Tradisi Ke-NU-an di Lingkungan Sekolah'
+                    ]
+                },
+                {
+                    id: 'dept-minat-bakat',
+                    type: 'Departemen',
+                    name: 'Dept. Olahraga, Seni & Budaya',
+                    icon: 'fa-trophy',
+                    iconBg: 'bg-orange-100 text-orange-600',
+                    focus: 'Wadah pengembangan potensi akademik, minat olahraga, kreativitas seni Islami, dan pelestarian budaya lokal.',
+                    programs: [
+                        'Pekan Olahraga dan Seni Pelajar NU (PORSENI) Kabupaten Sukoharjo',
+                        'Turnamen Futsal Pelajar NU Cup antar-PAC dan Komisariat',
+                        'Festival Hadroh, Paduan Suara Mars IPNU-IPPNU, dan Kaligrafi',
+                        'Olimpiade Ke-NU-an dan Cerdas Cermat Aswaja Tingkat Pelajar'
+                    ]
+                },
+                {
+                    id: 'dept-kominfo',
+                    type: 'Departemen',
+                    name: 'Dept. Kominfo',
+                    icon: 'fa-tower-broadcast',
+                    iconBg: 'bg-purple-100 text-purple-700',
+                    focus: 'Optimalisasi media digital, pengelolaan citra visual organisasi, serta penguatan literasi desain dan teknologi informasi.',
+                    programs: [
+                        'Posting Konten Instagram Rutin dan Kampanye Kreatif Pelajar NU',
+                        'Foto Studio Pengurus Pimpinan Cabang untuk Profil Resmi Organisasi',
+                        'Workshop Desain Grafis dan Produksi Konten Digital bagi Kader PAC',
+                        'Pengelolaan Portal Website Resmi & Pusat Data Digital PC IPNU IPPNU'
+                    ]
+                },
+                {
+                    id: 'lembaga-cbp-kpp',
+                    type: 'Lembaga',
+                    name: 'Lembaga CBP & KPP',
+                    icon: 'fa-shield-halved',
+                    iconBg: 'bg-red-100 text-red-600',
+                    focus: 'Kepanduan pelajar NU yang sigap dalam kedisiplinan, bela negara, pelestarian lingkungan, dan tanggap darurat kebencanaan.',
+                    programs: [
+                        'Pendidikan dan Latihan Pertama (DIKLATAMA) CBP dan KPP',
+                        'Pembentukan Tim Siaga Bencana Pelajar dan Pelatihan Pertolongan Pertama',
+                        'Pengamanan Protokoler Acara Besar PCNU dan Badan Otonom',
+                        'Kemah Bakti Pelajar dan Aksi Pelestarian Lingkungan Hijau'
+                    ]
+                },
+                {
+                    id: 'lembaga-pers',
+                    type: 'Lembaga',
+                    name: 'Lembaga Pers & Penerbitan',
+                    icon: 'fa-newspaper',
+                    iconBg: 'bg-indigo-100 text-indigo-700',
+                    focus: 'Pengembangan budaya literasi, jurnalistik pelajar, penerbitan buletin, dan dokumentasi gagasan kader.',
+                    programs: [
+                        'Sekolah Jurnalistik Pelajar NU (SJP) dan Pelatihan Penulisan Opini',
+                        'Penerbitan Buletin Digital dan Majalah Pelajar Sukoharjo',
+                        'Liputan Berita Kegiatan Cabang serta Rilis Pers Resmi Organisasi',
+                        'Lomba Menulis Esai dan Resensi Buku Keislaman & Kebangsaan'
+                    ]
+                },
+                {
+                    id: 'lembaga-ekonomi',
+                    type: 'Lembaga',
+                    name: 'Lembaga Ekonomi & Kewirausahaan',
+                    icon: 'fa-store',
+                    iconBg: 'bg-lime-100 text-lime-700',
+                    focus: 'Mendorong kemandirian finansial organisasi serta menumbuhkan jiwa kewirausahaan kreatif di kalangan pelajar.',
+                    programs: [
+                        'Pengelolaan Unit Usaha Atribut Resmi (Jas, Batik, Lencana IPNU IPPNU)',
+                        'Pelatihan Kewirausahaan Muda dan Pemasaran Digital (Digital Marketing)',
+                        'Bazar UMKM Pelajar pada Momentum Konser Sholawat & Hari Santri',
+                        'Inkubasi Bisnis Kreatif Bagi Kader dan Alumni Pengkaderan'
+                    ]
+                }
+            ]);
+
+            /**
+             * Artikel Berita Awal Bawaan
+             */
+            const DEFAULT_ARTICLES = Object.freeze([
+                {
+                    id: 'art-default-1',
+                    title: 'PC IPNU IPPNU Sukoharjo Gelar Rapat Kerja Cabang dan Konsolidasi 12 PAC',
+                    category: 'Berita Cabang',
+                    author: 'Redaksi LPP PC Sukoharjo',
+                    origin: 'PC Sukoharjo',
+                    date: '14 Februari 2026',
+                    image: generateNewsBannerSvg(
+                        'Konsolidasi 12 PAC Sukoharjo',
+                        'Rapat Kerja Cabang PC IPNU IPPNU Kabupaten Sukoharjo',
+                        '#f59e0b'
+                    ),
+                    content: [
+                        'SUKOHARJO — Pimpinan Cabang Ikatan Pelajar Nahdlatul Ulama (IPNU) dan Ikatan Pelajar Putri Nahdlatul Ulama (IPPNU) Kabupaten Sukoharjo sukses menyelenggarakan Rapat Kerja Cabang (RAKERCAB) yang dihadiri seluruh delegasi 12 Pimpinan Anak Cabang (PAC) se-Kabupaten Sukoharjo.',
+                        'Forum strategis ini merumuskan peta jalan pengkaderan terpadu, penguatan jaringan komisariat sekolah maupun pesantren, serta digitalisasi administrasi organisasi agar lebih responsif terhadap kebutuhan pelajar masa kini.',
+                        'Ketua PC IPNU IPPNU Kabupaten Sukoharjo menegaskan bahwa sinergi antar-departemen dan keterhubungan langsung dengan seluruh PAC menjadi kunci dalam mencetak pelajar berkarakter Ahlussunnah wal Jama’ah An-Nahdliyah.'
+                    ]
+                },
+                {
+                    id: 'art-default-2',
+                    title: 'Dept. Kominfo Sukseskan Workshop Desain Grafis dan Literasi Media Pelajar',
+                    category: 'Rilis Pers',
+                    author: 'Dept. Kominfo PC',
+                    origin: 'PC Sukoharjo',
+                    date: '02 Maret 2026',
+                    image: generateNewsBannerSvg(
+                        'Workshop Desain Grafis Pelajar',
+                        'Penguatan Kreativitas Digital Bersama Dept. Kominfo',
+                        '#10b981'
+                    ),
+                    content: [
+                        'SUKOHARJO — Departemen Komunikasi dan Informatika (Kominfo) PC IPNU IPPNU Kabupaten Sukoharjo menggelar Workshop Desain Grafis dan Tata Kelola Media Sosial bagi delegasi media dari 12 PAC.',
+                        'Para peserta dibekali teknik menyusun identitas visual organisasi yang rapi, pembuatan konten Instagram yang edukatif, serta strategi menangkal hoaks di kalangan pelajar.',
+                        'Melalui kegiatan ini, diharapkan setiap PAC mampu memproduksi publikasi kegiatan secara mandiri, kreatif, dan tetap menjunjung tinggi etika bermedia santri.'
+                    ]
+                },
+                {
+                    id: 'art-default-3',
+                    title: 'Meneguhkan Trilogi Belajar, Berjuang, Bertaqwa di Era Kecerdasan Buatan',
+                    category: 'Opini Pelajar',
+                    author: 'Ahmad Fauzan & Siti Rahmawati',
+                    origin: 'PAC Kartasura',
+                    date: '18 Maret 2026',
+                    image: generateNewsBannerSvg(
+                        'Trilogi Pelajar NU di Era Digital',
+                        'Opini Kader Pelajar Nahdlatul Ulama Sukoharjo',
+                        '#fbbf24'
+                    ),
+                    content: [
+                        'Perkembangan teknologi informasi dan kecerdasan buatan membawa perubahan besar dalam pola belajar generasi muda. Pelajar Nahdlatul Ulama tidak boleh sekadar menjadi penonton, melainkan harus tampil sebagai subjek yang menguasai ilmu pengetahuan sekaligus menjaga akhlakul karimah.',
+                        'Semangat Belajar menuntut kader IPNU IPPNU untuk terus mengasah literasi digital dan pemikiran kritis. Semangat Berjuang mengarahkan kecakapan teknologi tersebut demi kemaslahatan umat dan bangsa.',
+                        'Sementara nilai Bertaqwa menjadi kompas moral agar setiap langkah inovasi selalu berlandaskan ajaran Islam Ahlussunnah wal Jama’ah An-Nahdliyah.'
+                    ]
+                }
+            ]);
+
+            /**
+             * State Internal Tertutup
+             */
+            let activeCategoryFilter = 'Semua';
+            let compressedPhotoDataUrl = '';
+            let currentModalArticleId = null;
+            let pendingDeleteArticleId = null;
+            let pendingLoginAction = null;
+            let toastTimer = null;
+
+            /**
+             * ===============================================================
+             * UTILITAS KEAMANAN, ENKRIPSI SHA-256 MURNI & XOR+BASE64
+             * ===============================================================
+             */
+            function escapeHTML(value) {
+                return String(value ?? '')
+                    .replace(/&/g, '&amp;')
+                    .replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;')
+                    .replace(/"/g, '&quot;')
+                    .replace(/'/g, '&#39;');
+            }
+
+            /**
+             * Implementasi SHA-256 Sinkron Murni JavaScript (FIPS 180-4)
+             */
+            function pureSha256(asciiInput) {
+                const utf8Str = unescape(encodeURIComponent(String(asciiInput)));
+                const K = [
+                    0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
+                    0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
+                    0xe49b69c1, 0xefbe4786, 0x0fc19dc6, 0x240ca1cc, 0x2de92c6f, 0x4a7484aa, 0x5cb0a9dc, 0x76f988da,
+                    0x983e5152, 0xa831c66d, 0xb00327c8, 0xbf597fc7, 0xc6e00bf3, 0xd5a79147, 0x06ca6351, 0x14292967,
+                    0x27b70a85, 0x2e1b2138, 0x4d2c6dfc, 0x53380d13, 0x650a7354, 0x766a0abb, 0x81c2c92e, 0x92722c85,
+                    0xa2bfe8a1, 0xa81a664b, 0xc24b8b70, 0xc76c51a3, 0xd192e819, 0xd6990624, 0xf40e3585, 0x106aa070,
+                    0x19a4c116, 0x1e376c08, 0x2748774c, 0x34b0bcb5, 0x391c0cb3, 0x4ed8aa4a, 0x5b9cca4f, 0x682e6ff3,
+                    0x748f82ee, 0x78a5636f, 0x84c87814, 0x8cc70208, 0x90befffa, 0xa4506ceb, 0xbef9a3f7, 0xc67178f2
+                ];
+
+                const H = [
+                    0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
+                    0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19
+                ];
+
+                const rotr = (n, x) => (x >>> n) | (x << (32 - n));
+
+                const byteLen = utf8Str.length;
+                const words = [];
+                for (let i = 0; i < byteLen; i++) {
+                    words[i >> 2] |= (utf8Str.charCodeAt(i) & 0xff) << (24 - (i % 4) * 8);
+                }
+                words[byteLen >> 2] |= 0x80 << (24 - (byteLen % 4) * 8);
+                words[(((byteLen + 8) >> 6) + 1) * 16 - 1] = byteLen * 8;
+
+                const W = new Array(64);
+                for (let i = 0; i < words.length; i += 16) {
+                    let a = H[0], b = H[1], c = H[2], d = H[3];
+                    let e = H[4], f = H[5], g = H[6], h = H[7];
+
+                    for (let t = 0; t < 64; t++) {
+                        if (t < 16) {
+                            W[t] = words[i + t] | 0;
+                        } else {
+                            const s0 = rotr(7, W[t - 15]) ^ rotr(18, W[t - 15]) ^ (W[t - 15] >>> 3);
+                            const s1 = rotr(17, W[t - 2]) ^ rotr(19, W[t - 2]) ^ (W[t - 2] >>> 10);
+                            W[t] = (W[t - 16] + s0 + W[t - 7] + s1) | 0;
+                        }
+
+                        const S1 = rotr(6, e) ^ rotr(11, e) ^ rotr(25, e);
+                        const ch = (e & f) ^ ((~e) & g);
+                        const temp1 = (h + S1 + ch + K[t] + W[t]) | 0;
+                        const S0 = rotr(2, a) ^ rotr(13, a) ^ rotr(22, a);
+                        const maj = (a & b) ^ (a & c) ^ (b & c);
+                        const temp2 = (S0 + maj) | 0;
+
+                        h = g;
+                        g = f;
+                        f = e;
+                        e = (d + temp1) | 0;
+                        d = c;
+                        c = b;
+                        b = a;
+                        a = (temp1 + temp2) | 0;
+                    }
+
+                    H[0] = (H[0] + a) | 0;
+                    H[1] = (H[1] + b) | 0;
+                    H[2] = (H[2] + c) | 0;
+                    H[3] = (H[3] + d) | 0;
+                    H[4] = (H[4] + e) | 0;
+                    H[5] = (H[5] + f) | 0;
+                    H[6] = (H[6] + g) | 0;
+                    H[7] = (H[7] + h) | 0;
+                }
+
+                return H.map(val => (val >>> 0).toString(16).padStart(8, '0')).join('');
+            }
+
+            function encodeXorBase64(plainText, seed) {
+                const utf8Bytes = unescape(encodeURIComponent(String(plainText)));
+                const key = String(seed);
+                let xored = '';
+                for (let i = 0; i < utf8Bytes.length; i++) {
+                    const code = utf8Bytes.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+                    xored += String.fromCharCode(code);
+                }
+                return btoa(xored);
+            }
+
+            function decodeXorBase64(encodedB64, seed) {
+                const raw = atob(String(encodedB64).trim());
+                const key = String(seed);
+                let restored = '';
+                for (let i = 0; i < raw.length; i++) {
+                    const code = raw.charCodeAt(i) ^ key.charCodeAt(i % key.length);
+                    restored += String.fromCharCode(code);
+                }
+                return decodeURIComponent(escape(restored));
+            }
+
+            /**
+             * ===============================================================
+             * TOAST NOTIFICATION & CLIPBOARD HELPER
+             * ===============================================================
+             */
+            function showToast(title, message, variant = 'success') {
+                const box = document.getElementById('toastBox');
+                const iconBox = document.getElementById('toastIconContainer');
+                const iconEl = document.getElementById('toastIconEl');
+                const headingEl = document.getElementById('toastHeading');
+                const bodyEl = document.getElementById('toastBody');
+
+                if (!box || !iconBox || !iconEl || !headingEl || !bodyEl) return;
+
+                if (variant === 'error') {
+                    iconBox.className = 'w-9 h-9 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 mt-0.5';
+                    iconEl.className = 'fa-solid fa-circle-exclamation';
+                } else if (variant === 'warning') {
+                    iconBox.className = 'w-9 h-9 rounded-xl bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-0.5';
+                    iconEl.className = 'fa-solid fa-triangle-exclamation';
+                } else {
+                    iconBox.className = 'w-9 h-9 rounded-xl bg-nu-500/20 text-nu-500 flex items-center justify-center shrink-0 mt-0.5';
+                    iconEl.className = 'fa-solid fa-circle-check';
+                }
+
+                headingEl.textContent = title;
+                bodyEl.textContent = message;
+
+                box.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+                box.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+
+                if (toastTimer) clearTimeout(toastTimer);
+                toastTimer = setTimeout(dismissToast, 4200);
+            }
+
+            function dismissToast() {
+                const box = document.getElementById('toastBox');
+                if (!box) return;
+                box.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                box.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+            }
+
+            function copyInputTextToClipboard(inputId) {
+                const field = document.getElementById(inputId);
+                if (!field || !field.value.trim()) {
+                    showToast('Kolom Kosong', 'Ketik teks terlebih dahulu sebelum menyalin.', 'warning');
+                    return;
+                }
+                field.focus();
+                field.select();
+                field.setSelectionRange(0, field.value.length);
+                try {
+                    document.execCommand('copy');
+                    showToast('Berhasil Disalin', 'Kode hasil generate telah disalin ke clipboard.');
+                } catch (err) {
+                    showToast('Gagal Menyalin', 'Silakan blok dan salin manual dari kotak teks.', 'error');
+                }
+            }
+
+            /**
+             * ===============================================================
+             * BINDING DATA INTERNAL KE DOM (LOGO, DRIVE, PAC, PROGRAM)
+             * ===============================================================
+             */
+            function bindRegistryToDom() {
+                ['navLogoImg', 'heroLogoImg', 'footerLogoImg'].forEach(imgId => {
+                    const imgEl = document.getElementById(imgId);
+                    if (!imgEl) return;
+                    imgEl.onerror = function () {
+                        this.onerror = null;
+                        this.src = FALLBACK_LOGO_SVG;
+                    };
+                    imgEl.src = _internalRegistry.brandAsset;
+                });
+
+                const suratEl = document.getElementById('gdriveSuratLink');
+                const modulEl = document.getElementById('gdriveModulLink');
+                const peraturanEl = document.getElementById('gdrivePeraturanLink');
+                if (suratEl) suratEl.href = _internalRegistry.publicFolders.suratMenyurat;
+                if (modulEl) modulEl.href = _internalRegistry.publicFolders.modulKaderisasi;
+                if (peraturanEl) peraturanEl.href = _internalRegistry.publicFolders.peraturanOrganisasi;
+
+                const sec = _internalRegistry.secretariat;
+                const addrEl = document.getElementById('footerAddressText');
+                const waTextEl = document.getElementById('footerWaText');
+                const emailTextEl = document.getElementById('footerEmailText');
+                const igTextEl = document.getElementById('footerIgText');
+                const igSocEl = document.getElementById('footerIgSocial');
+                const waSocEl = document.getElementById('footerWaSocial');
+                const mailSocEl = document.getElementById('footerMailSocial');
+                const yearEl = document.getElementById('footerYear');
+
+                if (addrEl) addrEl.textContent = sec.address;
+                if (waTextEl) {
+                    waTextEl.textContent = sec.whatsappDisplay;
+                    waTextEl.href = sec.whatsappLink;
+                }
+                if (emailTextEl) {
+                    emailTextEl.textContent = sec.email;
+                    emailTextEl.href = 'mailto:' + sec.email;
+                }
+                if (igTextEl) {
+                    igTextEl.textContent = sec.instagramHandle;
+                    igTextEl.href = sec.instagramLink;
+                }
+                if (igSocEl) igSocEl.href = sec.instagramLink;
+                if (waSocEl) waSocEl.href = sec.whatsappLink;
+                if (mailSocEl) mailSocEl.href = 'mailto:' + sec.email;
+                if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+            }
+
+            function renderProgramCards() {
+                const grid = document.getElementById('programGrid');
+                if (!grid) return;
+
+                grid.innerHTML = DEPARTMENTS_DATA.map(dept => `
+                    <button
+                        type="button"
+                        data-dept-id="${escapeHTML(dept.id)}"
+                        class="program-card-btn text-left bg-slate-50 hover:bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 hover:border-nu-700/40 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
+                    >
+                        <div>
+                            <div class="flex items-center justify-between gap-3 mb-5">
+                                <div class="w-12 h-12 rounded-2xl ${dept.iconBg} flex items-center justify-center group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid ${dept.icon} text-xl"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-extrabold uppercase tracking-wider text-slate-600">
+                                    ${escapeHTML(dept.type)}
+                                </span>
+                            </div>
+
+                            <h3 class="font-extrabold text-lg text-slate-900 group-hover:text-nu-900 mb-2 transition-colors">
+                                ${escapeHTML(dept.name)}
+                            </h3>
+
+                            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3 mb-6">
+                                ${escapeHTML(dept.focus)}
+                            </p>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-200/70 flex items-center justify-between text-xs font-extrabold text-nu-900 group-hover:text-gold-600 transition-colors">
+                            <span>Lihat ${dept.programs.length} Program Kerja</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </div>
+                    </button>
+                `).join('');
+            }
+
+            function openProgramDetailModal(deptId) {
+                const dept = DEPARTMENTS_DATA.find(item => item.id === deptId);
+                if (!dept) return;
+
+                document.getElementById('pdmIconBox').className = `w-12 h-12 rounded-2xl ${dept.iconBg} flex items-center justify-center shrink-0 shadow-sm`;
+                document.getElementById('pdmIcon').className = `fa-solid ${dept.icon} text-xl`;
+                document.getElementById('pdmType').textContent = dept.type;
+                document.getElementById('pdmTitle').textContent = dept.name;
+                document.getElementById('pdmFocus').textContent = dept.focus;
+
+                document.getElementById('pdmPrograms').innerHTML = dept.programs.map((prog, index) => `
+                    <li class="flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 text-sm text-slate-700">
+                        <span class="w-6 h-6 rounded-lg bg-nu-900 text-gold-400 text-xs font-extrabold flex items-center justify-center shrink-0 mt-0.5">
+                            ${index + 1}
+                        </span>
+                        <span class="leading-relaxed font-medium">${escapeHTML(prog)}</span>
+                    </li>
+                `).join('');
+
+                openModal('programDetailModal');
+            }
+
+            function renderPacCards(filterQuery = '') {
+                const grid = document.getElementById('pacGrid');
+                const emptyState = document.getElementById('pacEmptyState');
+                if (!grid || !emptyState) return;
+
+                const normalized = String(filterQuery).trim().toLowerCase();
+                const entries = Object.entries(_internalRegistry.pacDirectory).filter(([kecamatan]) =>
+                    kecamatan.toLowerCase().includes(normalized)
+                );
+
+                if (entries.length === 0) {
+                    grid.innerHTML = '';
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+
+                emptyState.classList.add('hidden');
+                grid.innerHTML = entries.map(([kecamatan, url], idx) => `
+                    <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 hover:border-nu-700/40 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between group">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-2.5 py-1 rounded-lg bg-nu-50 text-nu-900 text-[11px] font-extrabold">
+                                    PAC #${String(idx + 1).padStart(2, '0')}
+                                </span>
+                                <i class="fa-solid fa-location-dot text-gold-500 text-sm"></i>
+                            </div>
+                            <h3 class="font-extrabold text-base sm:text-lg text-slate-900 group-hover:text-nu-900 transition-colors">
+                                PAC ${escapeHTML(kecamatan)}
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1 mb-5">
+                                Kecamatan ${escapeHTML(kecamatan)}, Kab. Sukoharjo
+                            </p>
+                        </div>
+                        <a
+                            href="${escapeHTML(url)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-nu-900 text-nu-900 hover:text-white text-xs font-extrabold transition-colors"
+                        >
+                            <span>Kunjungi Portal</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                        </a>
+                    </div>
+                `).join('');
+            }
+
+            function clearPacSearch() {
+                const input = document.getElementById('pacSearchInput');
+                const clearBtn = document.getElementById('pacClearBtn');
+                if (input) input.value = '';
+                if (clearBtn) {
+                    clearBtn.classList.add('hidden');
+                    clearBtn.classList.remove('flex');
+                }
+                renderPacCards('');
+            }
+
+            /**
+             * ===============================================================
+             * AUTENTIKASI ADMIN (DATABASE ANGGOTA & MODERASI REDAKSI)
+             * ===============================================================
+             */
+            function isAdminAuthenticated() {
+                return sessionStorage.getItem(SESSION_KEY_ADMIN_AUTH) === 'verified';
+            }
+
+            function setAdminAuthenticated(status) {
+                if (status) {
+                    sessionStorage.setItem(SESSION_KEY_ADMIN_AUTH, 'verified');
+                } else {
+                    sessionStorage.removeItem(SESSION_KEY_ADMIN_AUTH);
+                }
+                syncModerationUI();
+                renderNewsCards();
+            }
+
+            function resolveFallbackDigest() {
+                const { seedVector, maskVector } = _internalRegistry.authVault;
+                let reconstructed = '';
+                for (let i = 0; i < seedVector.length; i++) {
+                    reconstructed += String.fromCharCode(seedVector[i] ^ maskVector[i]);
+                }
+                const digest = pureSha256(reconstructed);
+                reconstructed = '';
+                return digest;
+            }
+
+            function verifyAdminCredentials(inputUsername, inputPassword) {
+                const cleanUser = String(inputUsername || '').trim();
+                const cleanPass = String(inputPassword || '').trim();
+                if (!cleanUser || !cleanPass) return false;
+
+                const { defaultUserHash, customUserHash, customPassHash } = _internalRegistry.authVault;
+
+                const expectedUserHash = (customUserHash && customUserHash.trim().length === 64)
+                    ? customUserHash.trim().toLowerCase()
+                    : defaultUserHash;
+
+                const expectedPassHash = (customPassHash && customPassHash.trim().length === 64)
+                    ? customPassHash.trim().toLowerCase()
+                    : resolveFallbackDigest();
+
+                return (
+                    pureSha256(cleanUser) === expectedUserHash &&
+                    pureSha256(cleanPass) === expectedPassHash
+                );
+            }
+
+            function openDecryptedDatabaseDrive() {
+                if (!isAdminAuthenticated()) {
+                    showToast('Akses Ditolak', 'Silakan login terlebih dahulu untuk membuka database.', 'error');
+                    openDatabaseModal();
+                    return;
+                }
+                try {
+                    const resolvedUrl = decodeXorBase64(_internalRegistry.dbVault, _internalRegistry.cipherSeed);
+                    if (!resolvedUrl || !/^https?:\/\//i.test(resolvedUrl)) {
+                        throw new Error('Invalid decoded URL');
+                    }
+                    window.open(resolvedUrl, '_blank', 'noopener,noreferrer');
+                } catch (err) {
+                    showToast('Gagal Mendekode Tautan', 'Format tautan terenkode tidak valid.', 'error');
+                }
+            }
+
+            function toggleInputPassword(inputId, iconId) {
+                const field = document.getElementById(inputId);
+                const icon = document.getElementById(iconId);
+                if (!field || !icon) return;
+
+                if (field.type === 'password') {
+                    field.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    field.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            }
+
+            function refreshDatabaseModalView() {
+                const loginPanel = document.getElementById('dbLoginFormPanel');
+                const authPanel = document.getElementById('dbAuthorizedPanel');
+                const subtitle = document.getElementById('dblmSubtitle');
+                const errorBox = document.getElementById('dbAuthError');
+
+                errorBox.classList.add('hidden');
+
+                if (isAdminAuthenticated()) {
+                    loginPanel.classList.add('hidden');
+                    authPanel.classList.remove('hidden');
+                    subtitle.textContent = 'Panel Akses Terautentikasi SHA-256';
+                } else {
+                    authPanel.classList.add('hidden');
+                    loginPanel.classList.remove('hidden');
+                    subtitle.textContent = 'Login Pengurus PC IPNU IPPNU';
+                }
+            }
+
+            function openDatabaseModal() {
+                refreshDatabaseModalView();
+                openModal('databaseLoginModal');
+                if (!isAdminAuthenticated()) {
+                    setTimeout(() => document.getElementById('dbUserField')?.focus(), 80);
+                }
+            }
+
+            function submitDatabaseLogin(event) {
+                event.preventDefault();
+                const userVal = document.getElementById('dbUserField').value;
+                const passVal = document.getElementById('dbPassField').value;
+                const errorBox = document.getElementById('dbAuthError');
+                const errorMsg = document.getElementById('dbAuthErrorMsg');
+
+                if (verifyAdminCredentials(userVal, passVal)) {
+                    document.getElementById('dbAuthForm').reset();
+                    setAdminAuthenticated(true);
+                    refreshDatabaseModalView();
+                    showToast('Login Berhasil', 'Akses Database Anggota dan Mode Moderasi Redaksi aktif.');
+                } else {
+                    errorMsg.textContent = 'Username/NIA atau kata sandi tidak valid.';
+                    errorBox.classList.remove('hidden');
+                }
+            }
+
+            function handleGlobalAdminLogout() {
+                setAdminAuthenticated(false);
+                refreshDatabaseModalView();
+                showToast('Logout Berhasil', 'Sesi pengurus telah ditutup dengan aman.');
+            }
+
+            /**
+             * ===============================================================
+             * GENERATOR HASH SHA-256 & XOR+BASE64 (KHUSUS ADMIN TERAUTENTIKASI)
+             * ===============================================================
+             */
+            function openCryptoGeneratorModal() {
+                if (!isAdminAuthenticated()) {
+                    openDatabaseModal();
+                    return;
+                }
+                openModal('adminCryptoGeneratorModal');
+                setTimeout(() => document.getElementById('genPlainSecretInput')?.focus(), 80);
+            }
+
+            function updateGeneratorOutputs() {
+                const secretInput = document.getElementById('genPlainSecretInput');
+                const shaOutput = document.getElementById('genSha256Output');
+                const urlInput = document.getElementById('genPlainUrlInput');
+                const encodedOutput = document.getElementById('genEncodedUrlOutput');
+
+                if (secretInput && shaOutput) {
+                    const val = secretInput.value.trim();
+                    shaOutput.value = val.length > 0 ? pureSha256(val) : '';
+                }
+
+                if (urlInput && encodedOutput) {
+                    const urlVal = urlInput.value.trim();
+                    encodedOutput.value = urlVal.length > 0 ? encodeXorBase64(urlVal, _internalRegistry.cipherSeed) : '';
+                }
+            }
+
+            /**
+             * ===============================================================
+             * MODERASI REDAKSI & PENGHAPUSAN ARTIKEL YANG TIDAK PANTAS
+             * ===============================================================
+             */
+            function syncModerationUI() {
+                const activeBar = document.getElementById('moderationActiveBar');
+                const toggleBtn = document.getElementById('moderationToggleBtn');
+                const btnText = document.getElementById('moderationBtnText');
+                const btnIcon = document.getElementById('moderationBtnIcon');
+
+                if (isAdminAuthenticated()) {
+                    activeBar.classList.remove('hidden');
+                    toggleBtn.className = 'inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-nu-700 bg-nu-50 text-nu-900 font-extrabold text-sm transition-all';
+                    btnIcon.className = 'fa-solid fa-shield-check text-nu-700';
+                    btnText.textContent = 'Moderasi Aktif';
+                } else {
+                    activeBar.classList.add('hidden');
+                    toggleBtn.className = 'inline-flex items-center gap-2 px-4 py-3 rounded-2xl border border-slate-300 bg-slate-50 hover:bg-slate-100 text-slate-700 font-bold text-sm transition-all';
+                    btnIcon.className = 'fa-solid fa-shield-halved text-nu-700';
+                    btnText.textContent = 'Moderasi Redaksi';
+                }
+            }
+
+            function handleModerationHeaderButton() {
+                if (isAdminAuthenticated()) {
+                    const bar = document.getElementById('moderationActiveBar');
+                    bar.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    showToast('Mode Moderasi Aktif', 'Silakan klik tombol Hapus pada artikel yang tidak pantas.', 'warning');
+                } else {
+                    pendingLoginAction = 'moderation';
+                    pendingDeleteArticleId = null;
+                    openRedaksiLoginModal();
+                }
+            }
+
+            function openRedaksiLoginModal() {
+                document.getElementById('redaksiAuthError').classList.add('hidden');
+                openModal('redaksiLoginModal');
+                setTimeout(() => document.getElementById('redaksiUserField')?.focus(), 80);
+            }
+
+            function submitRedaksiLogin(event) {
+                event.preventDefault();
+                const userVal = document.getElementById('redaksiUserField').value;
+                const passVal = document.getElementById('redaksiPassField').value;
+                const errorBox = document.getElementById('redaksiAuthError');
+                const errorMsg = document.getElementById('redaksiAuthErrorMsg');
+
+                if (verifyAdminCredentials(userVal, passVal)) {
+                    document.getElementById('redaksiAuthForm').reset();
+                    setAdminAuthenticated(true);
+                    closeAllModals();
+
+                    if (pendingLoginAction === 'delete-article' && pendingDeleteArticleId) {
+                        const targetId = pendingDeleteArticleId;
+                        pendingLoginAction = null;
+                        pendingDeleteArticleId = null;
+                        openDeleteConfirmationModal(targetId);
+                    } else {
+                        pendingLoginAction = null;
+                        showToast('Mode Moderasi Aktif', 'Anda masuk sebagai Admin Redaksi. Klik tombol Hapus pada artikel yang melanggar.');
+                    }
+                } else {
+                    errorMsg.textContent = 'Username atau kata sandi admin redaksi tidak valid.';
+                    errorBox.classList.remove('hidden');
+                }
+            }
+
+            function exitModerationMode() {
+                setAdminAuthenticated(false);
+                showToast('Keluar Mode Moderasi', 'Mode Moderasi Redaksi telah dinonaktifkan.');
+            }
+
+            function requestDeleteArticle(articleId) {
+                if (!isAdminAuthenticated()) {
+                    pendingLoginAction = 'delete-article';
+                    pendingDeleteArticleId = articleId;
+                    openRedaksiLoginModal();
+                    return;
+                }
+                openDeleteConfirmationModal(articleId);
+            }
+
+            function triggerDeleteFromReader() {
+                if (!currentModalArticleId) return;
+                requestDeleteArticle(currentModalArticleId);
+            }
+
+            function openDeleteConfirmationModal(articleId) {
+                const article = getVisibleArticles().find(item => item.id === articleId);
+                if (!article) return;
+
+                pendingDeleteArticleId = articleId;
+                document.getElementById('dcmArticleTitle').textContent = article.title;
+                document.getElementById('dcmArticleMeta').textContent = `${article.author} (${article.origin}) • Kategori: ${article.category}`;
+                document.getElementById('dcmReasonSelect').selectedIndex = 0;
+
+                openModal('deleteConfirmModal');
+            }
+
+            function confirmPermanentDeleteArticle() {
+                if (!pendingDeleteArticleId) return;
+
+                const targetId = pendingDeleteArticleId;
+                const reason = document.getElementById('dcmReasonSelect').value;
+
+                const userArticles = loadUserArticles();
+                const filteredUserArticles = userArticles.filter(art => art.id !== targetId);
+                saveUserArticles(filteredUserArticles);
+
+                const deletedIds = loadDeletedArticleIds();
+                if (!deletedIds.includes(targetId)) {
+                    deletedIds.push(targetId);
+                    saveDeletedArticleIds(deletedIds);
+                }
+
+                pendingDeleteArticleId = null;
+                currentModalArticleId = null;
+                closeAllModals();
+                renderNewsCards();
+
+                showToast(
+                    'Artikel Dihapus Permanen',
+                    `Artikel berhasil dihapus dengan alasan: "${reason}".`
+                );
+            }
+
+            /**
+             * ===============================================================
+             * PERS & RILIS BERITA (LOCALSTORAGE + BACA + TULIS ARTIKEL)
+             * ===============================================================
+             */
+            function loadUserArticles() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY_USER_ARTICLES);
+                    const parsed = raw ? JSON.parse(raw) : [];
+                    return Array.isArray(parsed) ? parsed : [];
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            function saveUserArticles(list) {
+                try {
+                    localStorage.setItem(STORAGE_KEY_USER_ARTICLES, JSON.stringify(list));
+                    return true;
+                } catch (e) {
+                    return false;
+                }
+            }
+
+            function loadDeletedArticleIds() {
+                try {
+                    const raw = localStorage.getItem(STORAGE_KEY_DELETED_IDS);
+                    const parsed = raw ? JSON.parse(raw) : [];
+                    return Array.isArray(parsed) ? parsed : [];
+                } catch (e) {
+                    return [];
+                }
+            }
+
+            function saveDeletedArticleIds(ids) {
+                try {
+                    localStorage.setItem(STORAGE_KEY_DELETED_IDS, JSON.stringify(ids));
+                } catch (e) {
+                    // Abaikan jika kapasitas penyimpanan penuh
+                }
+            }
+
+            function getVisibleArticles() {
+                const deletedIds = new Set(loadDeletedArticleIds());
+                const combined = [...loadUserArticles(), ...DEFAULT_ARTICLES];
+                return combined.filter(article => !deletedIds.has(article.id));
+            }
+
+            function renderNewsCards() {
+                const grid = document.getElementById('newsGrid');
+                if (!grid) return;
+
+                const articles = getVisibleArticles();
+                const filtered = activeCategoryFilter === 'Semua'
+                    ? articles
+                    : articles.filter(art => art.category === activeCategoryFilter);
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center py-14 px-4 bg-slate-50 rounded-3xl border border-dashed border-slate-300">
+                            <i class="fa-regular fa-newspaper text-3xl text-slate-400 mb-3"></i>
+                            <p class="font-extrabold text-slate-700">Belum ada artikel pada kategori "${escapeHTML(activeCategoryFilter)}"</p>
+                            <p class="text-sm text-slate-500 mt-1 mb-5">Silakan kirim berita kegiatan atau opini pelajar Anda sekarang.</p>
+                            <button type="button" data-action="open-write-article" class="px-5 py-2.5 rounded-xl bg-nu-900 text-white text-xs font-extrabold hover:bg-nu-700 transition-colors">
+                                Tulis Artikel Baru
+                            </button>
+                        </div>
+                    `;
+                    return;
+                }
+
+                const moderationOn = isAdminAuthenticated();
+
+                grid.innerHTML = filtered.map(art => {
+                    const summaryText = Array.isArray(art.content) ? art.content[0] : String(art.content || '');
+                    const deleteBtnClass = moderationOn
+                        ? 'delete-article-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-extrabold shadow-sm ring-2 ring-red-200 transition-all'
+                        : 'delete-article-btn inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-600 text-red-600 hover:text-white border border-red-200 hover:border-red-600 text-xs font-bold transition-colors';
+
+                    return `
+                        <article class="bg-white rounded-3xl overflow-hidden border ${moderationOn ? 'border-nu-700/40 ring-1 ring-nu-700/15' : 'border-slate-200/90'} shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                            <div>
+                                <div
+                                    data-read-id="${escapeHTML(art.id)}"
+                                    class="read-article-trigger relative h-48 bg-nu-900 overflow-hidden cursor-pointer"
+                                >
+                                    <img
+                                        src="${escapeHTML(art.image || DEFAULT_NEWS_SVG)}"
+                                        alt="${escapeHTML(art.title)}"
+                                        class="news-card-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    >
+                                    <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-gold-500 text-nu-950 text-[11px] font-extrabold shadow">
+                                        ${escapeHTML(art.category)}
+                                    </span>
+                                </div>
+
+                                <div class="p-6">
+                                    <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-slate-500 mb-2.5">
+                                        <span><i class="fa-regular fa-calendar text-nu-700 mr-1"></i>${escapeHTML(art.date)}</span>
+                                        <span>&bull;</span>
+                                        <span class="font-bold text-nu-900">${escapeHTML(art.origin)}</span>
+                                    </div>
+
+                                    <h3
+                                        data-read-id="${escapeHTML(art.id)}"
+                                        class="read-article-trigger font-extrabold text-lg text-slate-900 group-hover:text-nu-900 leading-snug mb-3 cursor-pointer transition-colors"
+                                    >
+                                        ${escapeHTML(art.title)}
+                                    </h3>
+
+                                    <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+                                        ${escapeHTML(summaryText)}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="px-6 pb-6 pt-3.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                                <button
+                                    type="button"
+                                    data-read-id="${escapeHTML(art.id)}"
+                                    class="read-article-trigger inline-flex items-center gap-1.5 text-xs font-extrabold text-nu-900 hover:text-gold-600 transition-colors"
+                                >
+                                    <span>Baca Selengkapnya</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+
+                                <button
+                                    type="button"
+                                    data-delete-id="${escapeHTML(art.id)}"
+                                    title="Hapus artikel yang tidak pantas"
+                                    class="${deleteBtnClass}"
+                                >
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    <span>Hapus</span>
+                                </button>
+                            </div>
+                        </article>
+                    `;
+                }).join('');
+
+                grid.querySelectorAll('.news-card-img').forEach(img => {
+                    img.onerror = function () {
+                        this.onerror = null;
+                        this.src = DEFAULT_NEWS_SVG;
+                    };
+                });
+            }
+
+            function openReadArticleModal(articleId) {
+                const article = getVisibleArticles().find(item => item.id === articleId);
+                if (!article) return;
+
+                currentModalArticleId = article.id;
+                const photoEl = document.getElementById('ramPhoto');
+                photoEl.onerror = function () {
+                    this.onerror = null;
+                    this.src = DEFAULT_NEWS_SVG;
+                };
+                photoEl.src = article.image || DEFAULT_NEWS_SVG;
+
+                document.getElementById('ramBadge').textContent = article.category;
+                document.getElementById('ramHeading').textContent = article.title;
+                document.getElementById('ramWriter').textContent = article.author;
+                document.getElementById('ramOrigin').textContent = article.origin;
+                document.getElementById('ramDate').textContent = article.date;
+
+                const paragraphs = Array.isArray(article.content)
+                    ? article.content
+                    : String(article.content || '').split(/\n+/).filter(Boolean);
+
+                document.getElementById('ramBody').innerHTML = paragraphs
+                    .map(p => `<p>${escapeHTML(p)}</p>`)
+                    .join('');
+
+                openModal('readArticleModal');
+            }
+
+            function openWriteArticleModal() {
+                document.getElementById('profanityWarningBox').classList.add('hidden');
+                openModal('writeArticleModal');
+                setTimeout(() => document.getElementById('inputWriterName')?.focus(), 80);
+            }
+
+            function handlePhotoUploadAndCompress(event) {
+                const file = event.target.files && event.target.files[0];
+                if (!file) return;
+
+                if (!file.type.startsWith('image/')) {
+                    showToast('Format Tidak Didukung', 'Silakan unggah file gambar (JPG, PNG, atau WebP).', 'error');
+                    event.target.value = '';
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function (loadEvent) {
+                    const tempImg = new Image();
+                    tempImg.onload = function () {
+                        const maxWidth = 800;
+                        let targetW = tempImg.width;
+                        let targetH = tempImg.height;
+
+                        if (targetW > maxWidth) {
+                            targetH = Math.round((targetH * maxWidth) / targetW);
+                            targetW = maxWidth;
+                        }
+
+                        const canvas = document.createElement('canvas');
+                        canvas.width = targetW;
+                        canvas.height = targetH;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(tempImg, 0, 0, targetW, targetH);
+
+                        compressedPhotoDataUrl = canvas.toDataURL('image/jpeg', 0.72);
+                        document.getElementById('photoPreviewImage').src = compressedPhotoDataUrl;
+                        document.getElementById('photoPreviewBox').classList.remove('hidden');
+                    };
+                    tempImg.src = loadEvent.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+
+            function removeUploadedPhoto() {
+                compressedPhotoDataUrl = '';
+                document.getElementById('inputArticlePhoto').value = '';
+                document.getElementById('photoPreviewImage').src = '';
+                document.getElementById('photoPreviewBox').classList.add('hidden');
+            }
+
+            function containsInappropriateText(combinedText) {
+                const normalized = combinedText.toLowerCase();
+                return INAPPROPRIATE_WORDS.find(word => {
+                    const pattern = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+                    return pattern.test(normalized);
+                });
+            }
+
+            function handleArticleSubmit(event) {
+                event.preventDefault();
+
+                const author = document.getElementById('inputWriterName').value.trim();
+                const origin = document.getElementById('inputWriterOrigin').value.trim();
+                const category = document.getElementById('inputArticleCategory').value;
+                const title = document.getElementById('inputArticleTitle').value.trim();
+                const bodyRaw = document.getElementById('inputArticleBody').value.trim();
+                const warningBox = document.getElementById('profanityWarningBox');
+                const warningText = document.getElementById('profanityWarningText');
+
+                if (!author || !origin || !title || !bodyRaw) {
+                    warningText.textContent = 'Mohon lengkapi seluruh kolom wajib sebelum menerbitkan artikel.';
+                    warningBox.classList.remove('hidden');
+                    return;
+                }
+
+                const flaggedWord = containsInappropriateText(`${author} ${origin} ${title} ${bodyRaw}`);
+                if (flaggedWord) {
+                    warningText.textContent = `Pengiriman ditolak: terdeteksi kata yang tidak pantas ("${flaggedWord}"). Gunakan bahasa yang santun dan sesuai etika Pelajar NU.`;
+                    warningBox.classList.remove('hidden');
+                    showToast('Konten Ditolak Sistem', 'Artikel mengandung kata yang tidak pantas.', 'error');
+                    return;
+                }
+
+                warningBox.classList.add('hidden');
+
+                const formattedDate = new Date().toLocaleDateString('id-ID', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                });
+
+                const paragraphs = bodyRaw.split(/\n+/).map(p => p.trim()).filter(Boolean);
+                const fallbackGraphic = generateNewsBannerSvg(
+                    title.length > 34 ? title.slice(0, 34) + '...' : title,
+                    `${origin} • Oleh ${author}`,
+                    '#f59e0b'
+                );
+
+                const newArticle = {
+                    id: 'art-user-' + Date.now(),
+                    title,
+                    category,
+                    author,
+                    origin,
+                    date: formattedDate,
+                    image: compressedPhotoDataUrl || fallbackGraphic,
+                    content: paragraphs
+                };
+
+                const existingArticles = loadUserArticles();
+                existingArticles.unshift(newArticle);
+                const savedOk = saveUserArticles(existingArticles);
+
+                activeCategoryFilter = 'Semua';
+                document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                    const isAll = btn.getAttribute('data-cat') === 'Semua';
+                    btn.className = isAll
+                        ? 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold bg-nu-900 text-white shadow-sm transition-all'
+                        : 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all';
+                });
+
+                renderNewsCards();
+                document.getElementById('articleSubmitForm').reset();
+                removeUploadedPhoto();
+                closeAllModals();
+
+                if (savedOk) {
+                    showToast('Artikel Berhasil Terbit!', `"${title}" telah dipublikasikan ke daftar berita.`);
+                } else {
+                    showToast('Artikel Ditampilkan', 'Artikel tampil di halaman (kapasitas penyimpanan browser terbatas).', 'warning');
+                }
+            }
+
+            /**
+             * ===============================================================
+             * MANAJEMEN MODAL, MENU MOBILE & DELEGASI EVENT TERPUSAT
+             * ===============================================================
+             */
+            const MODAL_IDS = [
+                'programDetailModal',
+                'databaseLoginModal',
+                'readArticleModal',
+                'writeArticleModal',
+                'redaksiLoginModal',
+                'deleteConfirmModal',
+                'adminCryptoGeneratorModal'
+            ];
+
+            function openModal(id) {
+                closeAllModals();
+                const target = document.getElementById(id);
+                if (!target) return;
+                target.classList.remove('hidden');
+                target.classList.add('flex');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeAllModals() {
+                MODAL_IDS.forEach(id => {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.classList.add('hidden');
+                        el.classList.remove('flex');
+                    }
+                });
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+            const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+            function closeMobileMenu() {
+                if (!mobileMenuPanel) return;
+                mobileMenuPanel.classList.add('hidden');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                mobileMenuIcon.classList.remove('fa-xmark');
+                mobileMenuIcon.classList.add('fa-bars');
+            }
+
+            // Delegasi klik terpusat di dalam IIFE (tanpa fungsi global di window)
+            document.addEventListener('click', event => {
+                if (event.target.classList.contains('modal-overlay')) {
+                    closeAllModals();
+                    return;
+                }
+
+                const actionBtn = event.target.closest('[data-action]');
+                if (actionBtn) {
+                    const action = actionBtn.getAttribute('data-action');
+                    switch (action) {
+                        case 'open-write-article':
+                            openWriteArticleModal();
+                            break;
+                        case 'mobile-write-article':
+                            closeMobileMenu();
+                            openWriteArticleModal();
+                            break;
+                        case 'open-db-modal':
+                            openDatabaseModal();
+                            break;
+                        case 'open-decrypted-db-drive':
+                            openDecryptedDatabaseDrive();
+                            break;
+                        case 'open-crypto-generator':
+                            openCryptoGeneratorModal();
+                            break;
+                        case 'admin-logout':
+                            handleGlobalAdminLogout();
+                            break;
+                        case 'clear-pac-search':
+                            clearPacSearch();
+                            break;
+                        case 'toggle-moderation':
+                            handleModerationHeaderButton();
+                            break;
+                        case 'exit-moderation':
+                            exitModerationMode();
+                            break;
+                        case 'delete-from-reader':
+                            triggerDeleteFromReader();
+                            break;
+                        case 'confirm-delete-article':
+                            confirmPermanentDeleteArticle();
+                            break;
+                        case 'remove-uploaded-photo':
+                            removeUploadedPhoto();
+                            break;
+                        case 'toggle-pass':
+                            toggleInputPassword(
+                                actionBtn.getAttribute('data-target'),
+                                actionBtn.getAttribute('data-icon')
+                            );
+                            break;
+                        case 'copy-field':
+                            copyInputTextToClipboard(actionBtn.getAttribute('data-target'));
+                            break;
+                        case 'close-modals':
+                            closeAllModals();
+                            break;
+                        case 'dismiss-toast':
+                            dismissToast();
+                            break;
+                    }
+                    return;
+                }
+
+                const deptCard = event.target.closest('.program-card-btn');
+                if (deptCard) {
+                    openProgramDetailModal(deptCard.getAttribute('data-dept-id'));
+                    return;
+                }
+
+                const deleteArticleBtn = event.target.closest('.delete-article-btn');
+                if (deleteArticleBtn) {
+                    requestDeleteArticle(deleteArticleBtn.getAttribute('data-delete-id'));
+                    return;
+                }
+
+                const readTrigger = event.target.closest('.read-article-trigger');
+                if (readTrigger) {
+                    openReadArticleModal(readTrigger.getAttribute('data-read-id'));
+                    return;
+                }
+            });
+
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') {
+                    closeAllModals();
+                    closeMobileMenu();
+                }
+            });
+
+            if (mobileMenuToggle && mobileMenuPanel) {
+                mobileMenuToggle.addEventListener('click', () => {
+                    const hidden = mobileMenuPanel.classList.contains('hidden');
+                    if (hidden) {
+                        mobileMenuPanel.classList.remove('hidden');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+                        mobileMenuIcon.classList.remove('fa-bars');
+                        mobileMenuIcon.classList.add('fa-xmark');
+                    } else {
+                        closeMobileMenu();
+                    }
+                });
+
+                document.querySelectorAll('.mobile-nav-item').forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+            }
+
+            // Event Listener Formulir & Input
+            document.getElementById('dbAuthForm')?.addEventListener('submit', submitDatabaseLogin);
+            document.getElementById('redaksiAuthForm')?.addEventListener('submit', submitRedaksiLogin);
+            document.getElementById('articleSubmitForm')?.addEventListener('submit', handleArticleSubmit);
+            document.getElementById('inputArticlePhoto')?.addEventListener('change', handlePhotoUploadAndCompress);
+            document.getElementById('genPlainSecretInput')?.addEventListener('input', updateGeneratorOutputs);
+            document.getElementById('genPlainUrlInput')?.addEventListener('input', updateGeneratorOutputs);
+
+            const pacSearchInput = document.getElementById('pacSearchInput');
+            const pacClearBtn = document.getElementById('pacClearBtn');
+            if (pacSearchInput) {
+                pacSearchInput.addEventListener('input', event => {
+                    const query = event.target.value;
+                    if (query.trim().length > 0) {
+                        pacClearBtn.classList.remove('hidden');
+                        pacClearBtn.classList.add('flex');
+                    } else {
+                        pacClearBtn.classList.add('hidden');
+                        pacClearBtn.classList.remove('flex');
+                    }
+                    renderPacCards(query);
+                });
+            }
+
+            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    activeCategoryFilter = btn.getAttribute('data-cat') || 'Semua';
+                    document.querySelectorAll('.cat-filter-btn').forEach(item => {
+                        const active = item === btn;
+                        item.className = active
+                            ? 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold bg-nu-900 text-white shadow-sm transition-all'
+                            : 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all';
+                    });
+                    renderNewsCards();
+                });
+            });
+
+            /**
+             * ===============================================================
+             * INISIALISASI SAAT HALAMAN DIMUAT
+             * ===============================================================
+             */
+            function initPortalApp() {
+                bindRegistryToDom();
+                renderProgramCards();
+                renderPacCards();
+                syncModerationUI();
+                renderNewsCards();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initPortalApp);
+            } else {
+                initPortalApp();
+            }
+        })();
+    </script>
+</body>
+</html>
