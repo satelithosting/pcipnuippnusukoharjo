@@ -102,7 +102,7 @@
                     <div class="w-12 h-12 rounded-2xl bg-nu-50 border-2 border-nu-900/15 group-hover:border-gold-500 p-1 flex items-center justify-center shrink-0 shadow-sm transition-colors">
                         <img
                             id="navLogoImg"
-                            src="logo.png"
+                            src="LOGO.WEB.png"
                             alt="Logo PC IPNU IPPNU Sukoharjo"
                             class="w-full h-full object-contain"
                         >
@@ -233,7 +233,7 @@
                                 <div class="w-16 h-16 rounded-2xl bg-white p-1.5 shadow-md shrink-0">
                                     <img
                                         id="heroLogoImg"
-                                        src="logo.png"
+                                        src="LOGO.WEB.png"
                                         alt="Emblem PC IPNU IPPNU Sukoharjo"
                                         class="w-full h-full object-contain"
                                     >
@@ -558,9 +558,15 @@
             <!-- Header Pers & Berita -->
             <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-8">
                 <div class="max-w-2xl">
-                    <span class="inline-block px-3.5 py-1 rounded-full bg-nu-50 text-nu-900 border border-nu-200 text-xs font-extrabold uppercase tracking-wider mb-3">
-                        Lembaga Pers &amp; Penerbitan (LPP)
-                    </span>
+                    <div class="flex flex-wrap items-center gap-2 mb-3">
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-nu-50 text-nu-900 border border-nu-200 text-xs font-extrabold uppercase tracking-wider">
+                            Lembaga Pers &amp; Penerbitan (LPP)
+                        </span>
+                        <span id="newsSyncStatusBadge" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold">
+                            <i class="fa-solid fa-laptop text-[10px]"></i>
+                            <span>Mode Lokal (Perangkat Ini)</span>
+                        </span>
+                    </div>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900">
                         Pers &amp; Rilis Berita
                     </h2>
@@ -602,14 +608,32 @@
                         <span class="text-gold-400">Mode Moderasi Redaksi Aktif</span> — Klik tombol <span class="underline decoration-gold-400">Hapus</span> pada artikel yang tidak pantas.
                     </p>
                 </div>
-                <button
-                    type="button"
-                    data-action="exit-moderation"
-                    class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/25 text-xs font-extrabold transition-colors self-start sm:self-auto shrink-0"
-                >
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span>Keluar Mode Moderasi</span>
-                </button>
+                <div class="flex flex-wrap items-center gap-2 self-start sm:self-auto shrink-0">
+                    <button
+                        type="button"
+                        data-action="sync-local-to-cloud"
+                        class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-nu-950 text-xs font-extrabold transition-colors"
+                    >
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <span>Upload Lokal ke Online</span>
+                    </button>
+                    <button
+                        type="button"
+                        data-action="export-local-articles"
+                        class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-gold-500 hover:bg-gold-600 text-nu-950 text-xs font-extrabold transition-colors"
+                    >
+                        <i class="fa-solid fa-code"></i>
+                        <span>Salin Kode Berita</span>
+                    </button>
+                    <button
+                        type="button"
+                        data-action="exit-moderation"
+                        class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/25 text-xs font-extrabold transition-colors"
+                    >
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span>Keluar Mode Moderasi</span>
+                    </button>
+                </div>
             </div>
 
             <!-- Filter Kategori Berita -->
@@ -650,7 +674,7 @@
                         <div class="w-12 h-12 rounded-2xl bg-white p-1 shrink-0">
                             <img
                                 id="footerLogoImg"
-                                src="logo.png"
+                                src="LOGO.WEB.png"
                                 alt="Logo PC IPNU IPPNU Sukoharjo"
                                 class="w-full h-full object-contain"
                             >
@@ -1406,7 +1430,7 @@
     </div>
 
     <!-- =====================================================================
-         SKRIP UTAMA TERENKAPSULASI DALAM IIFE CLOSURE KETAT (ANTI-DEVTOOLS)
+         SKRIP UTAMA TERENKAPSULASI DALAM IIFE CLOSURE KETAT
     ====================================================================== -->
     <script>
         (function () {
@@ -1414,7 +1438,8 @@
 
             /**
              * Konfigurasi internal tertutup dalam closure IIFE (Object.freeze).
-             * Tidak diekspos ke objek window maupun variabel global.
+             * Catatan: Endpoint Firebase Realtime Database menggunakan domain REST API
+             * (.firebaseio.com/berita.json), bukan URL halaman browser console.firebase.google.com.
              */
             const _internalRegistry = Object.freeze({
                 brandAsset: 'LOGO.WEB.png',
@@ -1432,6 +1457,8 @@
                     peraturanOrganisasi: 'https://drive.google.com'
                 }),
                 dbVault: 'ODc9ID1vZn80PDwlLmY3LCY3IjBnMz8jejc5ISYmZjYhOS01Ij16YiEYKCU6BjtnCzEYNC1hMj0eOgMZJhg+KScCEiUGDSEJdiU9JXQjOC8nOiUv',
+                // Endpoint REST API Firebase Realtime Database untuk publikasi berita online
+                newsCloudEndpoint: 'https://perskominfopcipnuippnuskh-default-rtdb.firebaseio.com/berita.json',
                 pacDirectory: Object.freeze({
                     'Baki': 'https://www.instagram.com/pac_ipnuippnu_baki?dmpr=MXJwbWh0dnRybWN5eg==',
                     'Bendosari': 'https://www.instagram.com/pacipnuippnubendosari?cnvx=MW9yYWo0dGp2cXJveg==',
@@ -1449,7 +1476,7 @@
                 secretariat: Object.freeze({
                     address: 'Gedung PCNU Kabupaten Sukoharjo, Jl. Pemuda, Sukoharjo, Jawa Tengah',
                     whatsappDisplay: '+62 896-9540-2762',
-                    whatsappLink: 'https://wa.me/6281234567890',
+                    whatsappLink: 'https://wa.me/6289695402762',
                     email: 'sekretariat@pcipnuippnusukoharjo.or.id',
                     instagramHandle: '@ipnuippnusukoharjo',
                     instagramLink: 'https://www.instagram.com/ipnuippnusukoharjo?hvrq=NTdoMGR4cWRxMHR3'
@@ -1468,7 +1495,7 @@
             ]);
 
             /**
-             * Fallback Vector SVG Data-URI apabila file logo.png belum diunggah
+             * Fallback Vector SVG Data-URI apabila file logo belum tersedia
              */
             const FALLBACK_LOGO_SVG = 'data:image/svg+xml;utf8,' + encodeURIComponent(
                 '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">' +
@@ -1714,6 +1741,8 @@
             let pendingDeleteArticleId = null;
             let pendingLoginAction = null;
             let toastTimer = null;
+            let cloudArticlesCache = [];
+            let activeResolvedCloudEndpoint = '';
 
             /**
              * ===============================================================
@@ -1858,7 +1887,7 @@
                 box.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
 
                 if (toastTimer) clearTimeout(toastTimer);
-                toastTimer = setTimeout(dismissToast, 4200);
+                toastTimer = setTimeout(dismissToast, 4500);
             }
 
             function dismissToast() {
@@ -2325,10 +2354,20 @@
 
                 const targetId = pendingDeleteArticleId;
                 const reason = document.getElementById('dcmReasonSelect').value;
+                const targetArticle = getVisibleArticles().find(art => art.id === targetId);
 
                 const userArticles = loadUserArticles();
                 const filteredUserArticles = userArticles.filter(art => art.id !== targetId);
                 saveUserArticles(filteredUserArticles);
+
+                const cloudEndpoint = getNormalizedCloudEndpoint();
+                if (targetArticle && targetArticle.cloudKey && cloudEndpoint) {
+                    const baseEndpoint = cloudEndpoint.replace(/\.json$/i, '');
+                    fetch(`${baseEndpoint}/${encodeURIComponent(targetArticle.cloudKey)}.json`, {
+                        method: 'DELETE'
+                    }).catch(() => {});
+                    cloudArticlesCache = cloudArticlesCache.filter(art => art.id !== targetId);
+                }
 
                 const deletedIds = loadDeletedArticleIds();
                 if (!deletedIds.includes(targetId)) {
@@ -2340,33 +2379,186 @@
                 currentModalArticleId = null;
                 closeAllModals();
                 renderNewsCards();
-
-                showToast(
-                    'Artikel Dihapus Permanen',
-                    `Artikel berhasil dihapus dengan alasan: "${reason}".`
-                );
+                showToast('Artikel Dihapus', `Artikel telah dihapus permanen oleh redaksi (${reason}).`, 'warning');
             }
 
             /**
              * ===============================================================
-             * PERS & RILIS BERITA (LOCALSTORAGE + BACA + TULIS ARTIKEL)
+             * PERS & RILIS BERITA (CLOUD SYNC + PENYIMPANAN LOKAL + MODERASI)
              * ===============================================================
              */
+            function getNormalizedCloudEndpoint() {
+                if (activeResolvedCloudEndpoint) {
+                    return activeResolvedCloudEndpoint;
+                }
+                let raw = (_internalRegistry.newsCloudEndpoint || '').trim();
+                if (!raw) return '';
+
+                // Jika pengguna tidak sengaja menempel tautan console.firebase.google.com, konversi otomatis
+                const consoleMatch = raw.match(/\/database\/([a-z0-9-]+)(?:\/|$)/i);
+                if (raw.includes('console.firebase.google.com') && consoleMatch) {
+                    raw = `https://${consoleMatch[1]}.firebaseio.com/berita.json`;
+                }
+
+                raw = raw.replace(/\/+$/, '');
+                if (!/\.json$/i.test(raw)) {
+                    raw += '/berita.json';
+                }
+                return raw;
+            }
+
+            function getCandidateCloudEndpoints() {
+                const primary = getNormalizedCloudEndpoint();
+                if (!primary) return [];
+                const candidates = [primary];
+
+                // Cadangan otomatis untuk Firebase Realtime Database wilayah Asia Tenggara (Singapore)
+                const usMatch = primary.match(/^https:\/\/([a-z0-9-]+)\.firebaseio\.com\/(.+)$/i);
+                if (usMatch) {
+                    candidates.push(`https://${usMatch[1]}.asia-southeast1.firebasedatabase.app/${usMatch[2]}`);
+                }
+                return candidates;
+            }
+
+            function updateNewsSyncBadge(status = 'local') {
+                const badge = document.getElementById('newsSyncStatusBadge');
+                if (!badge) return;
+                const endpoint = getNormalizedCloudEndpoint();
+
+                if (!endpoint) {
+                    badge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold';
+                    badge.innerHTML = '<i class="fa-solid fa-laptop text-[10px]"></i><span>Mode Lokal (Belum Terhubung Cloud)</span>';
+                } else if (status === 'connected') {
+                    badge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-nu-800 border border-emerald-200 text-xs font-bold';
+                    badge.innerHTML = '<i class="fa-solid fa-globe text-[10px] text-emerald-600"></i><span>Online (Tampil ke Semua Pengunjung)</span>';
+                } else if (status === 'connecting') {
+                    badge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold';
+                    badge.innerHTML = '<i class="fa-solid fa-rotate text-[10px]"></i><span>Menghubungkan Server Berita...</span>';
+                } else {
+                    badge.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold';
+                    badge.innerHTML = '<i class="fa-solid fa-triangle-exclamation text-[10px]"></i><span>Server Offline (Mode Lokal Aktif)</span>';
+                }
+            }
+
+            async function syncCloudArticles() {
+                const candidates = getCandidateCloudEndpoints();
+                if (candidates.length === 0) {
+                    updateNewsSyncBadge('local');
+                    return;
+                }
+
+                updateNewsSyncBadge('connecting');
+
+                for (const url of candidates) {
+                    try {
+                        const res = await fetch(url);
+                        if (!res.ok) continue;
+                        const data = await res.json();
+                        activeResolvedCloudEndpoint = url;
+                        updateNewsSyncBadge('connected');
+
+                        if (data && typeof data === 'object') {
+                            const items = Object.entries(data)
+                                .map(([cloudKey, val]) => {
+                                    if (!val || typeof val !== 'object' || !val.title) return null;
+                                    return Object.assign({}, val, {
+                                        id: val.id || ('art-cloud-' + cloudKey),
+                                        cloudKey
+                                    });
+                                })
+                                .filter(Boolean)
+                                .reverse();
+
+                            cloudArticlesCache = items;
+                            renderNewsCards();
+                        }
+                        return;
+                    } catch (err) {
+                        // Lanjut mencoba endpoint cadangan berikutnya
+                    }
+                }
+
+                updateNewsSyncBadge('error');
+            }
+
+            function pushLocalArticlesToCloud() {
+                const endpoint = getNormalizedCloudEndpoint();
+                if (!endpoint) {
+                    showToast(
+                        'Server Online Belum Diisi',
+                        'Isi dahulu newsCloudEndpoint dengan link Firebase Realtime Database di file index.html.',
+                        'warning'
+                    );
+                    return;
+                }
+
+                const cloudIds = new Set(cloudArticlesCache.map(item => item.id));
+                const unsynced = loadUserArticles().filter(item => !cloudIds.has(item.id));
+
+                if (unsynced.length === 0) {
+                    showToast('Sudah Tersinkron', 'Semua artikel lokal sudah terunggah ke server online.');
+                    return;
+                }
+
+                Promise.all(
+                    unsynced.map(article =>
+                        fetch(endpoint, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(article)
+                        }).then(res => (res.ok ? res.json() : null))
+                    )
+                )
+                    .then(() => {
+                        syncCloudArticles();
+                        showToast('Sinkronisasi Berhasil', `${unsynced.length} artikel berhasil diunggah agar bisa dilihat semua pengunjung.`);
+                    })
+                    .catch(() => {
+                        showToast('Gagal Mengunggah', 'Periksa koneksi internet atau aturan Read/Write Firebase.', 'error');
+                    });
+            }
+
+            function exportArticlesForGithub() {
+                const articles = getVisibleArticles().filter(item => !String(item.id).startsWith('art-default-'));
+                if (articles.length === 0) {
+                    showToast('Belum Ada Artikel Baru', 'Belum ada artikel kiriman pengguna yang dapat disalin.', 'warning');
+                    return;
+                }
+
+                const serialized = JSON.stringify(articles, null, 4);
+                const tempArea = document.createElement('textarea');
+                tempArea.value = serialized;
+                tempArea.style.position = 'fixed';
+                tempArea.style.left = '-9999px';
+                document.body.appendChild(tempArea);
+                tempArea.focus();
+                tempArea.select();
+
+                try {
+                    document.execCommand('copy');
+                    showToast('Kode Berita Disalin', `${articles.length} artikel disalin dalam format JSON ke clipboard.`);
+                } catch (err) {
+                    showToast('Gagal Menyalin', 'Browser membatasi akses clipboard otomatis.', 'error');
+                } finally {
+                    document.body.removeChild(tempArea);
+                }
+            }
+
             function loadUserArticles() {
                 try {
                     const raw = localStorage.getItem(STORAGE_KEY_USER_ARTICLES);
                     const parsed = raw ? JSON.parse(raw) : [];
                     return Array.isArray(parsed) ? parsed : [];
-                } catch (e) {
+                } catch (err) {
                     return [];
                 }
             }
 
-            function saveUserArticles(list) {
+            function saveUserArticles(articles) {
                 try {
-                    localStorage.setItem(STORAGE_KEY_USER_ARTICLES, JSON.stringify(list));
+                    localStorage.setItem(STORAGE_KEY_USER_ARTICLES, JSON.stringify(articles));
                     return true;
-                } catch (e) {
+                } catch (err) {
                     return false;
                 }
             }
@@ -2376,7 +2568,7 @@
                     const raw = localStorage.getItem(STORAGE_KEY_DELETED_IDS);
                     const parsed = raw ? JSON.parse(raw) : [];
                     return Array.isArray(parsed) ? parsed : [];
-                } catch (e) {
+                } catch (err) {
                     return [];
                 }
             }
@@ -2384,115 +2576,119 @@
             function saveDeletedArticleIds(ids) {
                 try {
                     localStorage.setItem(STORAGE_KEY_DELETED_IDS, JSON.stringify(ids));
-                } catch (e) {
-                    // Abaikan jika kapasitas penyimpanan penuh
+                } catch (err) {
+                    // Abaikan jika penyimpanan dibatasi
                 }
             }
 
             function getVisibleArticles() {
-                const deletedIds = new Set(loadDeletedArticleIds());
-                const combined = [...loadUserArticles(), ...DEFAULT_ARTICLES];
-                return combined.filter(article => !deletedIds.has(article.id));
+                const deletedSet = new Set(loadDeletedArticleIds());
+                const combined = [];
+                const seenIds = new Set();
+
+                [...cloudArticlesCache, ...loadUserArticles(), ...DEFAULT_ARTICLES].forEach(item => {
+                    if (!item || !item.id || deletedSet.has(item.id) || seenIds.has(item.id)) return;
+                    seenIds.add(item.id);
+                    combined.push(item);
+                });
+
+                return combined;
             }
 
             function renderNewsCards() {
                 const grid = document.getElementById('newsGrid');
                 if (!grid) return;
 
-                const articles = getVisibleArticles();
+                const allVisible = getVisibleArticles();
                 const filtered = activeCategoryFilter === 'Semua'
-                    ? articles
-                    : articles.filter(art => art.category === activeCategoryFilter);
+                    ? allVisible
+                    : allVisible.filter(art => art.category === activeCategoryFilter);
 
                 if (filtered.length === 0) {
                     grid.innerHTML = `
-                        <div class="col-span-full text-center py-14 px-4 bg-slate-50 rounded-3xl border border-dashed border-slate-300">
+                        <div class="col-span-full text-center py-14 px-6 rounded-3xl bg-slate-50 border border-dashed border-slate-300">
                             <i class="fa-regular fa-newspaper text-3xl text-slate-400 mb-3"></i>
-                            <p class="font-extrabold text-slate-700">Belum ada artikel pada kategori "${escapeHTML(activeCategoryFilter)}"</p>
-                            <p class="text-sm text-slate-500 mt-1 mb-5">Silakan kirim berita kegiatan atau opini pelajar Anda sekarang.</p>
-                            <button type="button" data-action="open-write-article" class="px-5 py-2.5 rounded-xl bg-nu-900 text-white text-xs font-extrabold hover:bg-nu-700 transition-colors">
-                                Tulis Artikel Baru
+                            <h3 class="font-extrabold text-slate-800 text-base">Belum ada artikel pada kategori "${escapeHTML(activeCategoryFilter)}"</h3>
+                            <p class="text-xs sm:text-sm text-slate-500 mt-1 mb-5">Jadilah kontributor pertama yang membagikan kabar pelajar NU pada kategori ini.</p>
+                            <button type="button" data-action="open-write-article" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-nu-900 hover:bg-nu-700 text-white text-xs font-extrabold transition-colors">
+                                <i class="fa-solid fa-pen-nib text-gold-400"></i>
+                                <span>Tulis Artikel Sekarang</span>
                             </button>
                         </div>
                     `;
                     return;
                 }
 
-                const moderationOn = isAdminAuthenticated();
+                const adminActive = isAdminAuthenticated();
 
-                grid.innerHTML = filtered.map(art => {
-                    const summaryText = Array.isArray(art.content) ? art.content[0] : String(art.content || '');
-                    const deleteBtnClass = moderationOn
-                        ? 'delete-article-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-extrabold shadow-sm ring-2 ring-red-200 transition-all'
-                        : 'delete-article-btn inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-red-50 hover:bg-red-600 text-red-600 hover:text-white border border-red-200 hover:border-red-600 text-xs font-bold transition-colors';
+                grid.innerHTML = filtered.map(article => {
+                    const paragraphs = Array.isArray(article.content)
+                        ? article.content
+                        : String(article.content || '').split(/\n+/).filter(Boolean);
+                    const excerpt = paragraphs[0] || '';
+                    const coverImage = article.image || DEFAULT_NEWS_SVG;
 
                     return `
-                        <article class="bg-white rounded-3xl overflow-hidden border ${moderationOn ? 'border-nu-700/40 ring-1 ring-nu-700/15' : 'border-slate-200/90'} shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <article class="bg-white rounded-3xl border border-slate-200/90 hover:border-nu-700/40 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col justify-between group">
                             <div>
-                                <div
-                                    data-read-id="${escapeHTML(art.id)}"
-                                    class="read-article-trigger relative h-48 bg-nu-900 overflow-hidden cursor-pointer"
-                                >
+                                <div class="relative h-48 bg-nu-900 overflow-hidden">
                                     <img
-                                        src="${escapeHTML(art.image || DEFAULT_NEWS_SVG)}"
-                                        alt="${escapeHTML(art.title)}"
-                                        class="news-card-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        src="${escapeHTML(coverImage)}"
+                                        alt="${escapeHTML(article.title)}"
+                                        onerror="this.onerror=null;this.src='${DEFAULT_NEWS_SVG}'"
+                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     >
-                                    <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-gold-500 text-nu-950 text-[11px] font-extrabold shadow">
-                                        ${escapeHTML(art.category)}
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                                    <span class="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-gold-500 text-nu-950 text-[11px] font-extrabold uppercase tracking-wide shadow">
+                                        ${escapeHTML(article.category)}
                                     </span>
+                                    ${adminActive ? `
+                                        <button
+                                            type="button"
+                                            data-action="delete-article"
+                                            data-article-id="${escapeHTML(article.id)}"
+                                            class="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-extrabold shadow-lg transition-colors"
+                                        >
+                                            <i class="fa-solid fa-trash-can"></i>
+                                            <span>Hapus</span>
+                                        </button>
+                                    ` : ''}
                                 </div>
 
                                 <div class="p-6">
-                                    <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-xs text-slate-500 mb-2.5">
-                                        <span><i class="fa-regular fa-calendar text-nu-700 mr-1"></i>${escapeHTML(art.date)}</span>
+                                    <div class="flex items-center gap-3 text-[11px] text-slate-500 font-semibold mb-2.5">
+                                        <span><i class="fa-regular fa-calendar text-nu-700 mr-1"></i>${escapeHTML(article.date || 'Baru saja')}</span>
                                         <span>&bull;</span>
-                                        <span class="font-bold text-nu-900">${escapeHTML(art.origin)}</span>
+                                        <span class="truncate"><i class="fa-solid fa-location-dot text-gold-600 mr-1"></i>${escapeHTML(article.origin || 'Sukoharjo')}</span>
                                     </div>
 
-                                    <h3
-                                        data-read-id="${escapeHTML(art.id)}"
-                                        class="read-article-trigger font-extrabold text-lg text-slate-900 group-hover:text-nu-900 leading-snug mb-3 cursor-pointer transition-colors"
-                                    >
-                                        ${escapeHTML(art.title)}
+                                    <h3 class="font-extrabold text-lg text-slate-900 group-hover:text-nu-900 leading-snug line-clamp-2 mb-2.5 transition-colors">
+                                        ${escapeHTML(article.title)}
                                     </h3>
 
                                     <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
-                                        ${escapeHTML(summaryText)}
+                                        ${escapeHTML(excerpt)}
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="px-6 pb-6 pt-3.5 border-t border-slate-100 flex items-center justify-between gap-2">
+                            <div class="px-6 py-4 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between gap-3">
+                                <span class="text-xs font-bold text-slate-600 truncate">
+                                    <i class="fa-solid fa-user-pen text-nu-700 mr-1.5"></i>${escapeHTML(article.author || 'Kontributor Pelajar')}
+                                </span>
                                 <button
                                     type="button"
-                                    data-read-id="${escapeHTML(art.id)}"
-                                    class="read-article-trigger inline-flex items-center gap-1.5 text-xs font-extrabold text-nu-900 hover:text-gold-600 transition-colors"
+                                    data-action="read-article"
+                                    data-article-id="${escapeHTML(article.id)}"
+                                    class="inline-flex items-center gap-1.5 text-xs font-extrabold text-nu-900 hover:text-gold-600 shrink-0 transition-colors"
                                 >
-                                    <span>Baca Selengkapnya</span>
+                                    <span>Baca</span>
                                     <i class="fa-solid fa-arrow-right"></i>
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-delete-id="${escapeHTML(art.id)}"
-                                    title="Hapus artikel yang tidak pantas"
-                                    class="${deleteBtnClass}"
-                                >
-                                    <i class="fa-solid fa-trash-can"></i>
-                                    <span>Hapus</span>
                                 </button>
                             </div>
                         </article>
                     `;
                 }).join('');
-
-                grid.querySelectorAll('.news-card-img').forEach(img => {
-                    img.onerror = function () {
-                        this.onerror = null;
-                        this.src = DEFAULT_NEWS_SVG;
-                    };
-                });
             }
 
             function openReadArticleModal(articleId) {
@@ -2500,6 +2696,7 @@
                 if (!article) return;
 
                 currentModalArticleId = article.id;
+
                 const photoEl = document.getElementById('ramPhoto');
                 photoEl.onerror = function () {
                     this.onerror = null;
@@ -2507,11 +2704,11 @@
                 };
                 photoEl.src = article.image || DEFAULT_NEWS_SVG;
 
-                document.getElementById('ramBadge').textContent = article.category;
+                document.getElementById('ramBadge').textContent = article.category || 'Berita';
                 document.getElementById('ramHeading').textContent = article.title;
-                document.getElementById('ramWriter').textContent = article.author;
-                document.getElementById('ramOrigin').textContent = article.origin;
-                document.getElementById('ramDate').textContent = article.date;
+                document.getElementById('ramWriter').textContent = article.author || 'Kontributor';
+                document.getElementById('ramOrigin').textContent = article.origin || 'Kab. Sukoharjo';
+                document.getElementById('ramDate').textContent = article.date || '';
 
                 const paragraphs = Array.isArray(article.content)
                     ? article.content
@@ -2525,28 +2722,38 @@
             }
 
             function openWriteArticleModal() {
-                document.getElementById('profanityWarningBox').classList.add('hidden');
+                document.getElementById('profanityWarningBox')?.classList.add('hidden');
                 openModal('writeArticleModal');
                 setTimeout(() => document.getElementById('inputWriterName')?.focus(), 80);
             }
 
-            function handlePhotoUploadAndCompress(event) {
-                const file = event.target.files && event.target.files[0];
+            function clearUploadedPhoto() {
+                compressedPhotoDataUrl = '';
+                const input = document.getElementById('inputArticlePhoto');
+                const previewBox = document.getElementById('photoPreviewBox');
+                const previewImg = document.getElementById('photoPreviewImage');
+                if (input) input.value = '';
+                if (previewImg) previewImg.src = '';
+                if (previewBox) previewBox.classList.add('hidden');
+            }
+
+            function handleArticlePhotoChange(event) {
+                const file = event.target.files?.[0];
                 if (!file) return;
 
                 if (!file.type.startsWith('image/')) {
-                    showToast('Format Tidak Didukung', 'Silakan unggah file gambar (JPG, PNG, atau WebP).', 'error');
-                    event.target.value = '';
+                    showToast('Format Tidak Didukung', 'Silakan pilih file gambar (JPG, PNG, atau WebP).', 'error');
+                    clearUploadedPhoto();
                     return;
                 }
 
                 const reader = new FileReader();
-                reader.onload = function (loadEvent) {
-                    const tempImg = new Image();
-                    tempImg.onload = function () {
-                        const maxWidth = 800;
-                        let targetW = tempImg.width;
-                        let targetH = tempImg.height;
+                reader.onload = function (loadEvt) {
+                    const img = new Image();
+                    img.onload = function () {
+                        const maxWidth = 900;
+                        let targetW = img.width;
+                        let targetH = img.height;
 
                         if (targetW > maxWidth) {
                             targetH = Math.round((targetH * maxWidth) / targetW);
@@ -2557,110 +2764,127 @@
                         canvas.width = targetW;
                         canvas.height = targetH;
                         const ctx = canvas.getContext('2d');
-                        ctx.drawImage(tempImg, 0, 0, targetW, targetH);
+                        ctx.drawImage(img, 0, 0, targetW, targetH);
 
-                        compressedPhotoDataUrl = canvas.toDataURL('image/jpeg', 0.72);
-                        document.getElementById('photoPreviewImage').src = compressedPhotoDataUrl;
-                        document.getElementById('photoPreviewBox').classList.remove('hidden');
+                        compressedPhotoDataUrl = canvas.toDataURL('image/jpeg', 0.78);
+                        const previewBox = document.getElementById('photoPreviewBox');
+                        const previewImg = document.getElementById('photoPreviewImage');
+                        if (previewImg) previewImg.src = compressedPhotoDataUrl;
+                        if (previewBox) previewBox.classList.remove('hidden');
                     };
-                    tempImg.src = loadEvent.target.result;
+                    img.src = loadEvt.target.result;
                 };
                 reader.readAsDataURL(file);
             }
 
-            function removeUploadedPhoto() {
-                compressedPhotoDataUrl = '';
-                document.getElementById('inputArticlePhoto').value = '';
-                document.getElementById('photoPreviewImage').src = '';
-                document.getElementById('photoPreviewBox').classList.add('hidden');
+            function findInappropriateWord(textToCheck) {
+                const normalized = String(textToCheck || '').toLowerCase();
+                for (const badWord of INAPPROPRIATE_WORDS) {
+                    const pattern = new RegExp(`\\b${badWord}\\b`, 'i');
+                    if (pattern.test(normalized)) {
+                        return badWord;
+                    }
+                }
+                return null;
             }
 
-            function containsInappropriateText(combinedText) {
-                const normalized = combinedText.toLowerCase();
-                return INAPPROPRIATE_WORDS.find(word => {
-                    const pattern = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
-                    return pattern.test(normalized);
-                });
+            function formatIndonesianDate(dateObj) {
+                const months = [
+                    'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
+                    'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+                ];
+                const day = String(dateObj.getDate()).padStart(2, '0');
+                const month = months[dateObj.getMonth()];
+                const year = dateObj.getFullYear();
+                return `${day} ${month} ${year}`;
             }
 
-            function handleArticleSubmit(event) {
+            function handleArticleFormSubmit(event) {
                 event.preventDefault();
 
-                const author = document.getElementById('inputWriterName').value.trim();
-                const origin = document.getElementById('inputWriterOrigin').value.trim();
+                const writerName = document.getElementById('inputWriterName').value.trim();
+                const writerOrigin = document.getElementById('inputWriterOrigin').value.trim();
                 const category = document.getElementById('inputArticleCategory').value;
                 const title = document.getElementById('inputArticleTitle').value.trim();
-                const bodyRaw = document.getElementById('inputArticleBody').value.trim();
+                const rawBody = document.getElementById('inputArticleBody').value.trim();
                 const warningBox = document.getElementById('profanityWarningBox');
                 const warningText = document.getElementById('profanityWarningText');
 
-                if (!author || !origin || !title || !bodyRaw) {
-                    warningText.textContent = 'Mohon lengkapi seluruh kolom wajib sebelum menerbitkan artikel.';
-                    warningBox.classList.remove('hidden');
+                if (!writerName || !writerOrigin || !title || !rawBody) {
+                    showToast('Data Belum Lengkap', 'Mohon lengkapi semua kolom wajib bertanda bintang.', 'warning');
                     return;
                 }
 
-                const flaggedWord = containsInappropriateText(`${author} ${origin} ${title} ${bodyRaw}`);
-                if (flaggedWord) {
-                    warningText.textContent = `Pengiriman ditolak: terdeteksi kata yang tidak pantas ("${flaggedWord}"). Gunakan bahasa yang santun dan sesuai etika Pelajar NU.`;
+                const flagged = findInappropriateWord(`${writerName} ${writerOrigin} ${title} ${rawBody}`);
+                if (flagged) {
+                    warningText.textContent = 'Konten terdeteksi mengandung kata tidak pantas atau melanggar etika pelajar NU. Mohon perbaiki sebelum menerbitkan.';
                     warningBox.classList.remove('hidden');
-                    showToast('Konten Ditolak Sistem', 'Artikel mengandung kata yang tidak pantas.', 'error');
                     return;
                 }
-
                 warningBox.classList.add('hidden');
 
-                const formattedDate = new Date().toLocaleDateString('id-ID', {
-                    day: '2-digit',
-                    month: 'long',
-                    year: 'numeric'
-                });
-
-                const paragraphs = bodyRaw.split(/\n+/).map(p => p.trim()).filter(Boolean);
-                const fallbackGraphic = generateNewsBannerSvg(
-                    title.length > 34 ? title.slice(0, 34) + '...' : title,
-                    `${origin} • Oleh ${author}`,
-                    '#f59e0b'
-                );
+                const paragraphs = rawBody
+                    .split(/\n+/)
+                    .map(line => line.trim())
+                    .filter(Boolean);
 
                 const newArticle = {
                     id: 'art-user-' + Date.now(),
                     title,
                     category,
-                    author,
-                    origin,
-                    date: formattedDate,
-                    image: compressedPhotoDataUrl || fallbackGraphic,
+                    author: writerName,
+                    origin: writerOrigin,
+                    date: formatIndonesianDate(new Date()),
+                    image: compressedPhotoDataUrl || generateNewsBannerSvg(title.slice(0, 34), `${writerOrigin} • ${category}`, '#f59e0b'),
                     content: paragraphs
                 };
 
                 const existingArticles = loadUserArticles();
                 existingArticles.unshift(newArticle);
-                const savedOk = saveUserArticles(existingArticles);
+                saveUserArticles(existingArticles);
+
+                const cloudUrl = getNormalizedCloudEndpoint();
+                if (cloudUrl) {
+                    fetch(cloudUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newArticle)
+                    })
+                        .then(res => (res.ok ? res.json() : null))
+                        .then(resData => {
+                            if (resData && resData.name) {
+                                newArticle.cloudKey = resData.name;
+                                cloudArticlesCache.unshift(newArticle);
+                                updateNewsSyncBadge('connected');
+                                renderNewsCards();
+                                showToast('Terbit Online ke Semua Pengunjung!', `"${title}" kini dapat dilihat oleh seluruh pengunjung website.`);
+                            }
+                        })
+                        .catch(() => {});
+                }
 
                 activeCategoryFilter = 'Semua';
+                updateCategoryFilterButtons();
+                renderNewsCards();
+
+                document.getElementById('articleSubmitForm').reset();
+                clearUploadedPhoto();
+                closeAllModals();
+                showToast('Artikel Diterbitkan!', `"${title}" telah berhasil dipublikasikan di rubrik Pers & Berita.`);
+            }
+
+            function updateCategoryFilterButtons() {
                 document.querySelectorAll('.cat-filter-btn').forEach(btn => {
-                    const isAll = btn.getAttribute('data-cat') === 'Semua';
-                    btn.className = isAll
+                    const isSelected = btn.getAttribute('data-cat') === activeCategoryFilter;
+                    btn.className = isSelected
                         ? 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold bg-nu-900 text-white shadow-sm transition-all'
                         : 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all';
                 });
-
-                renderNewsCards();
-                document.getElementById('articleSubmitForm').reset();
-                removeUploadedPhoto();
-                closeAllModals();
-
-                if (savedOk) {
-                    showToast('Artikel Berhasil Terbit!', `"${title}" telah dipublikasikan ke daftar berita.`);
-                } else {
-                    showToast('Artikel Ditampilkan', 'Artikel tampil di halaman (kapasitas penyimpanan browser terbatas).', 'warning');
-                }
             }
 
             /**
              * ===============================================================
-             * MANAJEMEN MODAL, MENU MOBILE & DELEGASI EVENT TERPUSAT
+             * KONTROL MODAL & NAVIGASI MOBILE
              * ===============================================================
              */
             const MODAL_IDS = [
@@ -2673,54 +2897,89 @@
                 'adminCryptoGeneratorModal'
             ];
 
-            function openModal(id) {
+            function openModal(modalId) {
                 closeAllModals();
-                const target = document.getElementById(id);
-                if (!target) return;
-                target.classList.remove('hidden');
-                target.classList.add('flex');
-                document.body.classList.add('overflow-hidden');
+                const modal = document.getElementById(modalId);
+                if (!modal) return;
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
             }
 
             function closeAllModals() {
                 MODAL_IDS.forEach(id => {
                     const el = document.getElementById(id);
-                    if (el) {
-                        el.classList.add('hidden');
-                        el.classList.remove('flex');
-                    }
+                    if (!el) return;
+                    el.classList.add('hidden');
+                    el.classList.remove('flex');
                 });
-                document.body.classList.remove('overflow-hidden');
+                document.body.style.overflow = '';
             }
 
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            const mobileMenuPanel = document.getElementById('mobileMenuPanel');
-            const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+            function toggleMobileMenu(forceClose = false) {
+                const panel = document.getElementById('mobileMenuPanel');
+                const toggleBtn = document.getElementById('mobileMenuToggle');
+                const icon = document.getElementById('mobileMenuIcon');
+                if (!panel || !toggleBtn || !icon) return;
 
-            function closeMobileMenu() {
-                if (!mobileMenuPanel) return;
-                mobileMenuPanel.classList.add('hidden');
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                mobileMenuIcon.classList.remove('fa-xmark');
-                mobileMenuIcon.classList.add('fa-bars');
-            }
+                const isCurrentlyOpen = !panel.classList.contains('hidden');
+                const shouldOpen = forceClose ? false : !isCurrentlyOpen;
 
-            // Delegasi klik terpusat di dalam IIFE (tanpa fungsi global di window)
-            document.addEventListener('click', event => {
-                if (event.target.classList.contains('modal-overlay')) {
-                    closeAllModals();
-                    return;
+                if (shouldOpen) {
+                    panel.classList.remove('hidden');
+                    toggleBtn.setAttribute('aria-expanded', 'true');
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    panel.classList.add('hidden');
+                    toggleBtn.setAttribute('aria-expanded', 'false');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
                 }
+            }
 
-                const actionBtn = event.target.closest('[data-action]');
-                if (actionBtn) {
-                    const action = actionBtn.getAttribute('data-action');
+            /**
+             * ===============================================================
+             * PENDAFTARAN EVENT LISTENER TERPUSAT
+             * ===============================================================
+             */
+            function bindGlobalEvents() {
+                // Delegasi klik tombol data-action dan elemen dinamis
+                document.addEventListener('click', function (event) {
+                    // Tutup modal saat klik latar belakang gelap
+                    if (event.target.classList.contains('modal-overlay')) {
+                        closeAllModals();
+                        return;
+                    }
+
+                    // Klik kartu departemen / program kerja
+                    const deptBtn = event.target.closest('.program-card-btn');
+                    if (deptBtn) {
+                        const deptId = deptBtn.getAttribute('data-dept-id');
+                        if (deptId) openProgramDetailModal(deptId);
+                        return;
+                    }
+
+                    // Klik tombol filter kategori berita
+                    const catBtn = event.target.closest('.cat-filter-btn');
+                    if (catBtn) {
+                        activeCategoryFilter = catBtn.getAttribute('data-cat') || 'Semua';
+                        updateCategoryFilterButtons();
+                        renderNewsCards();
+                        return;
+                    }
+
+                    // Delegasi data-action
+                    const actionEl = event.target.closest('[data-action]');
+                    if (!actionEl) return;
+
+                    const action = actionEl.getAttribute('data-action');
                     switch (action) {
                         case 'open-write-article':
                             openWriteArticleModal();
                             break;
                         case 'mobile-write-article':
-                            closeMobileMenu();
+                            toggleMobileMenu(true);
                             openWriteArticleModal();
                             break;
                         case 'open-db-modal':
@@ -2735,6 +2994,15 @@
                         case 'admin-logout':
                             handleGlobalAdminLogout();
                             break;
+                        case 'toggle-pass':
+                            toggleInputPassword(
+                                actionEl.getAttribute('data-target'),
+                                actionEl.getAttribute('data-icon')
+                            );
+                            break;
+                        case 'copy-field':
+                            copyInputTextToClipboard(actionEl.getAttribute('data-target'));
+                            break;
                         case 'clear-pac-search':
                             clearPacSearch();
                             break;
@@ -2744,6 +3012,18 @@
                         case 'exit-moderation':
                             exitModerationMode();
                             break;
+                        case 'sync-local-to-cloud':
+                            pushLocalArticlesToCloud();
+                            break;
+                        case 'export-local-articles':
+                            exportArticlesForGithub();
+                            break;
+                        case 'read-article':
+                            openReadArticleModal(actionEl.getAttribute('data-article-id'));
+                            break;
+                        case 'delete-article':
+                            requestDeleteArticle(actionEl.getAttribute('data-article-id'));
+                            break;
                         case 'delete-from-reader':
                             triggerDeleteFromReader();
                             break;
@@ -2751,16 +3031,7 @@
                             confirmPermanentDeleteArticle();
                             break;
                         case 'remove-uploaded-photo':
-                            removeUploadedPhoto();
-                            break;
-                        case 'toggle-pass':
-                            toggleInputPassword(
-                                actionBtn.getAttribute('data-target'),
-                                actionBtn.getAttribute('data-icon')
-                            );
-                            break;
-                        case 'copy-field':
-                            copyInputTextToClipboard(actionBtn.getAttribute('data-target'));
+                            clearUploadedPhoto();
                             break;
                         case 'close-modals':
                             closeAllModals();
@@ -2769,107 +3040,74 @@
                             dismissToast();
                             break;
                     }
-                    return;
-                }
+                });
 
-                const deptCard = event.target.closest('.program-card-btn');
-                if (deptCard) {
-                    openProgramDetailModal(deptCard.getAttribute('data-dept-id'));
-                    return;
-                }
-
-                const deleteArticleBtn = event.target.closest('.delete-article-btn');
-                if (deleteArticleBtn) {
-                    requestDeleteArticle(deleteArticleBtn.getAttribute('data-delete-id'));
-                    return;
-                }
-
-                const readTrigger = event.target.closest('.read-article-trigger');
-                if (readTrigger) {
-                    openReadArticleModal(readTrigger.getAttribute('data-read-id'));
-                    return;
-                }
-            });
-
-            document.addEventListener('keydown', event => {
-                if (event.key === 'Escape') {
-                    closeAllModals();
-                    closeMobileMenu();
-                }
-            });
-
-            if (mobileMenuToggle && mobileMenuPanel) {
-                mobileMenuToggle.addEventListener('click', () => {
-                    const hidden = mobileMenuPanel.classList.contains('hidden');
-                    if (hidden) {
-                        mobileMenuPanel.classList.remove('hidden');
-                        mobileMenuToggle.setAttribute('aria-expanded', 'true');
-                        mobileMenuIcon.classList.remove('fa-bars');
-                        mobileMenuIcon.classList.add('fa-xmark');
-                    } else {
-                        closeMobileMenu();
-                    }
+                // Hamburger menu mobile
+                document.getElementById('mobileMenuToggle')?.addEventListener('click', function () {
+                    toggleMobileMenu();
                 });
 
                 document.querySelectorAll('.mobile-nav-item').forEach(link => {
-                    link.addEventListener('click', closeMobileMenu);
-                });
-            }
-
-            // Event Listener Formulir & Input
-            document.getElementById('dbAuthForm')?.addEventListener('submit', submitDatabaseLogin);
-            document.getElementById('redaksiAuthForm')?.addEventListener('submit', submitRedaksiLogin);
-            document.getElementById('articleSubmitForm')?.addEventListener('submit', handleArticleSubmit);
-            document.getElementById('inputArticlePhoto')?.addEventListener('change', handlePhotoUploadAndCompress);
-            document.getElementById('genPlainSecretInput')?.addEventListener('input', updateGeneratorOutputs);
-            document.getElementById('genPlainUrlInput')?.addEventListener('input', updateGeneratorOutputs);
-
-            const pacSearchInput = document.getElementById('pacSearchInput');
-            const pacClearBtn = document.getElementById('pacClearBtn');
-            if (pacSearchInput) {
-                pacSearchInput.addEventListener('input', event => {
-                    const query = event.target.value;
-                    if (query.trim().length > 0) {
-                        pacClearBtn.classList.remove('hidden');
-                        pacClearBtn.classList.add('flex');
-                    } else {
-                        pacClearBtn.classList.add('hidden');
-                        pacClearBtn.classList.remove('flex');
-                    }
-                    renderPacCards(query);
-                });
-            }
-
-            document.querySelectorAll('.cat-filter-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    activeCategoryFilter = btn.getAttribute('data-cat') || 'Semua';
-                    document.querySelectorAll('.cat-filter-btn').forEach(item => {
-                        const active = item === btn;
-                        item.className = active
-                            ? 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-extrabold bg-nu-900 text-white shadow-sm transition-all'
-                            : 'cat-filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-slate-100 text-slate-600 hover:bg-nu-50 hover:text-nu-900 transition-all';
+                    link.addEventListener('click', function () {
+                        toggleMobileMenu(true);
                     });
-                    renderNewsCards();
                 });
-            });
+
+                // Pencarian PAC real-time
+                const pacInput = document.getElementById('pacSearchInput');
+                const pacClear = document.getElementById('pacClearBtn');
+                pacInput?.addEventListener('input', function () {
+                    const q = this.value;
+                    if (pacClear) {
+                        if (q.trim().length > 0) {
+                            pacClear.classList.remove('hidden');
+                            pacClear.classList.add('flex');
+                        } else {
+                            pacClear.classList.add('hidden');
+                            pacClear.classList.remove('flex');
+                        }
+                    }
+                    renderPacCards(q);
+                });
+
+                // Submit form login database, login redaksi, & tulis artikel
+                document.getElementById('dbAuthForm')?.addEventListener('submit', submitDatabaseLogin);
+                document.getElementById('redaksiAuthForm')?.addEventListener('submit', submitRedaksiLogin);
+                document.getElementById('articleSubmitForm')?.addEventListener('submit', handleArticleFormSubmit);
+
+                // Upload foto artikel
+                document.getElementById('inputArticlePhoto')?.addEventListener('change', handleArticlePhotoChange);
+
+                // Generator hash SHA-256 & XOR+Base64
+                document.getElementById('genPlainSecretInput')?.addEventListener('input', updateGeneratorOutputs);
+                document.getElementById('genPlainUrlInput')?.addEventListener('input', updateGeneratorOutputs);
+
+                // Tutup modal dengan tombol Escape
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') {
+                        closeAllModals();
+                        toggleMobileMenu(true);
+                    }
+                });
+            }
 
             /**
-             * ===============================================================
-             * INISIALISASI SAAT HALAMAN DIMUAT
-             * ===============================================================
+             * Inisialisasi Portal Saat Halaman Siap
              */
-            function initPortalApp() {
+            function initPortal() {
                 bindRegistryToDom();
                 renderProgramCards();
-                renderPacCards();
+                renderPacCards('');
                 syncModerationUI();
                 renderNewsCards();
+                bindGlobalEvents();
+                syncCloudArticles();
             }
 
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initPortalApp);
+                document.addEventListener('DOMContentLoaded', initPortal);
             } else {
-                initPortalApp();
+                initPortal();
             }
         })();
     </script>
